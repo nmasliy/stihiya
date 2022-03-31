@@ -18,31 +18,6 @@ window.addEventListener('DOMContentLoaded', function() {
             })
         }
     }
-
-    function moveElement(element, nextElement, parentElement, wrapper, breakpoint) {
-        const $element = document.querySelector(element);
-        const $nextElement = document.querySelector(nextElement);
-        const $parentElement = document.querySelector(parentElement);
-        const $wrapper = document.querySelector(wrapper);
-
-        if ($element) {
-
-            if (window.innerWidth <= breakpoint) {
-                $parentElement.insertAdjacentElement('afterbegin', $element);
-            } 
-
-            window.addEventListener('resize', function(e) {
-                if (window.innerWidth <= breakpoint) {
-                    $parentElement.insertAdjacentElement('afterbegin', $element);
-                } else {
-                    $wrapper.insertBefore($element, $nextElement);
-                }
-            })
-            
-        }
-    }
-
-    moveElement('.header__text', '.header__burger', '.hero__content', '.header__inner', 575);
     
     initAccordions();
     initMenu();

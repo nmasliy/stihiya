@@ -14,7 +14,7 @@ $menuTransition: .35s ease-in-out;
                 width: 123px;
             }
         }
-        @media screen and (max-width: 575px) {
+        @media screen and (max-width: 700px) {
             img {
                 width: 92px;
             }
@@ -32,11 +32,13 @@ $menuTransition: .35s ease-in-out;
         text-align: center;
         text-transform: uppercase;
         font-weight: 500;
+        max-width: 300px;
 
         @media screen and (max-width: 575px) {
             font-size: 15px;
             text-align: left;
             margin-bottom: 32px;
+            max-width: 100%;
         }
     }
 
