@@ -1,0 +1,89 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+button,
+input,
+textarea {
+    outline: transparent;
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    font: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    
+    &::placeholder {
+        color: inherit;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+// Remove input date icon
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+// /Remove input date icon
+
+// Remove input number icon
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-btnon,
+input::-webkit-inner-spin-btnon {
+    -webkit-appearance: none;
+}
+// /Remove input number icon
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font: inherit;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+picture, label {
+    display: block;
+}

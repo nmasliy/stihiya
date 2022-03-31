@@ -1,0 +1,113 @@
+// *Vars
+// !Colors
+$white: #fff;
+$black: #000;
+$font: 'JetBrains Mono', monospace;
+
+// */Vars
+
+body {
+    min-width: 320px;
+    font-family: $font;
+    font-size: 16px;
+    line-height: 1.3; 
+    color: $white;
+    background-color: $black;
+}
+
+input, textarea {
+    display: inline-block;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 13px 16px;
+}
+
+textarea {
+    min-height: 110px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+
+    body {
+        overflow: hidden;
+    }
+}
+
+// Block scroll for Safari
+.block-scroll {
+    overflow: hidden;
+    height: 100%;
+
+    body {
+        overflow: hidden;
+        height: 100%;
+    }
+}
+// /Block scroll for Safari
+
+.container {
+    max-width: 1344px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: inline-block;
+    img {
+        vertical-align: middle;
+    }
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.button {
+    text-transform: uppercase;
+
+    span {
+        display: inline-block;
+        margin-left: 16px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        span {
+            transition: .35s ease;
+        }
+        &:hover {
+            span {
+                transform: translateX(-6px);
+            }
+        }
+    }
+}
+
+.section {
+    padding: 64px 0;
+    margin-bottom: 64px;
+
+    @media screen and (max-width: 768px) {
+        padding: 24px 0;
+        margin-bottom: 24px;
+    }
+
+    &__head {
+        max-width: 342px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+    }
+
+    &__btn {
+        margin-top: 24px;
+    }
+}
