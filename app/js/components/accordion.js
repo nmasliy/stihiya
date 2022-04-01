@@ -5,7 +5,6 @@ export function initAccordions() {
         $triggers.forEach(item => {
             item.addEventListener('click', function() {
                 item.closest('.accordion__item').classList.toggle('active');
-                item.closest('.accordion__item').querySelector('.plus').classList.toggle('active');
             })
         })
     }

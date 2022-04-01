@@ -152,18 +152,29 @@
                     <div class="music__info">
                         <div class="music__cover">
                             <div class="music__img">
-                                <picture>
-                                    <source srcset="img/audio-cover.webp 1x, img/audio-cover@2x.webp 2x">
-                                    <img width="400" height="400" src="img/audio-cover.png" srcset="img/audio-cover.png 1x, img/audio-cover@2x.png 2x" alt="cover">
-                                </picture>
+                                <img width="400" height="400" src="img/audio-cover.png"alt="cover">
                             </div>
-                            <div class="music__player" data-da=".music__desc,575,3">
-    
+                            <div id="player-wrapper" class="music__player" data-da=".music__desc,575,2">
+                                <audio id="player" src="files/audio/track-1.mp3" data-volume="0.2">
+                                    Your browser does not support the
+                                    <code>audio</code> element.
+                                </audio>
+                                <div id="player-bar" class="music__player-bar">
+                                    <button id="playAudio" class="music__player-btn"></button>
+                                </div>
                             </div>
                         </div>
                         <div class="music__desc">
-                            <div class="music__title">Pink Floyd</div>
-                            <div class="music__subtitle">Shine on you crazy diamond</div>
+                            <div class="music__head">
+                                <div class="music__head-text">
+                                    <div class="music__title">Pink Floyd</div>
+                                    <div class="music__subtitle">Shine on you crazy diamond</div>
+                                </div>
+                                <div class="music__icon"></div>
+                                <div class="music__arrow">
+                                    <img src="img/arrow.svg" alt="">
+                                </div>
+                            </div>
                             <div class="music__text">
                                 <p>Egestas pellentesque vel sit sed quis. Morbi nec feugiat facilisi morbi metus sit laoreet. Venenatis id ut auctor sit quis. Consequat dolor tellus sed egestas in neque dolor id pellentesque. At vitae scelerisque integer nunc. Nulla cras hac sit purus id.</p>
                                 <p>Vulputate egestas pulvinar ullamcorper lobortis felis elit. Aliquam, etiam nisl, et egestas. Porttitor euismod vel augue accumsan. Id vivamus vel blandit commodo tellus nunc vitae adipiscing arcu. Viverra.</p>
@@ -180,8 +191,20 @@
                     </div>
                     <div class="music__content">
                         <ul class="music__list">
+    <li class="music-item active" data-audio="files/audio/track-1.mp3" data-cover="img/audio-cover.png">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
+</svg>
+
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Pink Floyd</div>
+            <div class="music-item__subtitle">Shine on you crazy diamond</div>
+        </div>
+    </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -194,7 +217,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -207,7 +230,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -220,7 +243,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -233,7 +256,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -246,7 +269,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -259,7 +282,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -272,7 +295,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -285,7 +308,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -298,7 +321,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -311,7 +334,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -324,7 +347,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -337,7 +360,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -350,7 +373,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -363,7 +386,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -376,7 +399,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -389,7 +412,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -402,7 +425,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -415,7 +438,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -428,7 +451,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -441,7 +464,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -454,7 +477,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -467,7 +490,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -480,7 +503,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -493,7 +516,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -506,7 +529,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -519,7 +542,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -532,7 +555,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -545,7 +568,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -558,7 +581,7 @@
             </div>
         </li>
     
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -571,150 +594,7 @@
             </div>
         </li>
     
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item">
+        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
             <button class="music-item__btn">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>

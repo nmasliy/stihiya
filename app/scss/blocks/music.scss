@@ -21,8 +21,47 @@
 
         @media screen and (max-width: 575px) {
             margin: 0 -16px;
+            width: calc(100% + 32px);
             padding: 16px;
-            width: auto;
+
+            &.active {
+                .music__arrow {
+                    img {
+                        transform: rotate(270deg);
+                    }
+                }
+                .music__text {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        background-color: $white;
+        flex-shrink: 0;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+
+    &__arrow {
+        display: none;
+
+        img {
+            transform: rotate(90deg);
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width: 575px) {
+            display: inline-block;
         }
     }
 
@@ -32,7 +71,6 @@
             margin-left: 24px;
         }
 
-        
         @media screen and (max-width: 575px) {
             width: 100%;
             margin: 0;
@@ -92,11 +130,53 @@
 
     &__player {
         margin-bottom: 24px;
-        background-color: #fff;
-        height: 30px;
+        border: 1px solid #FFFFFF;
+        height: 48px;
+
+        @media screen and (max-width: 1024px) {
+            height: 36px;
+        }
 
         @media screen and (max-width: 575px) {
             margin-bottom: 16px;
+        }
+
+        audio {
+            display: none;
+        }
+
+        &-bar {
+            position: relative;
+            background-color: rgba($white, 0.2);
+            height: 100%;
+            width: 0;
+        }
+
+        &-btn {
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z' fill='white'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &.pause {
+                background-image: url("data:image/svg+xml,%3Csvg width='13' height='24' viewBox='0 0 13 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 0V24M12.5 0V24' stroke='white'/%3E%3C/svg%3E%0A");
+            }
+
+            @media screen and (max-width: 1024px) {
+                left: 6px;
+                &.pause {
+                    background-size: 9px 18px;
+                }
+            }
+
         }
     }
 
@@ -127,6 +207,10 @@
                 margin-bottom: 0;
             }
         }
+
+        @media screen and (max-width: 575px) {
+            display: none;
+        }
     }
 
     &__footer {
@@ -146,9 +230,13 @@
         display: flex;
         flex-wrap: wrap;
         margin: 0 -8px;
+
         @media screen and (max-width: 1024px) {
             min-width: 850px;
             margin: 0;
+            display: grid;
+            gap: 8px 16px;
+            grid-template-columns: repeat(auto-fit, 270px);
         }
     }
 }
@@ -167,6 +255,11 @@
                 fill: $black;
             }
         }
+    }
+
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+        margin: 0;
     }
     
     &__btn {

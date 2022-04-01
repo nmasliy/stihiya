@@ -29,6 +29,12 @@ function reloadPage() {
     browserSync.reload({stream: true});
 }
 
+function files() {
+    return src('app/files/**/*')
+        .pipe(dest('dist/files'))
+        .pipe(browserSync.stream())
+}
+
 function html() {
     return src('app/*.html')
         .pipe(fileinclude({
@@ -120,6 +126,7 @@ function watcher() {
     watch(['app/scss/libs.scss'], stylesLibs);
     watch(['app/js/components/*.js','app/js/main.js'], scripts);
     watch(['app/js/libs/*.js'], scriptsLibs);
+    watch(['app/files/**/*'], files);
     // watch(['app/img/**/*'], images);
     watch(['app/*.html', 'app/html/*.html'], html);
 }
@@ -135,13 +142,14 @@ exports.scriptsLibs = scriptsLibs;
 exports.stylesLibs = stylesLibs;
 exports.html = html;
 exports.images = images;
+exports.files = files;
 exports.fonts = fonts;
 exports.watcher = watcher;
 exports.browsersync = browsersync;
 exports.clean = clean;
 
 const helpers = parallel(watcher, browsersync);
-const mainTasks = [html, styles, stylesLibs, scriptsLibs, scripts, images];
+const mainTasks = [html, styles, stylesLibs, scriptsLibs, scripts, images, files];
 const build = series(mainTasks, images);
 
 exports.default = series(parallel(parallel(mainTasks), helpers), reloadPage);
