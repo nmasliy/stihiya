@@ -27,10 +27,6 @@
     <section class="interview section" id="interview">
         <div class="container">
             <div class="interview__inner">
-                <div class="section__head">
-                    <h2 class="section__title">Интервью</h2>
-                    <div class="section__text">Convallis pretium integer morbi purus iaculis elementum magna ac. Sit diam molestie.</div>
-                </div>
                 <div class="interview__content">
                     <iframe width="1340" height="715" src="https://www.youtube.com/embed/u31qwQUeGuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -38,13 +34,11 @@
         </div>
     </section>
 
-    <section class="signal" id="signal">
+    <section class="signal section" id="signal">
         <div class="container">
             <div class="signal__inner">
                 <div class="section__head">
                     <h2 class="section__title">Сигнал</h2>
-                    <div class="section__text">Convallis pretium integer morbi purus iaculis elementum magna ac. Sit diam molestie.</div>
-                    <a href="#" class="section__btn button">содержание сигнала <span>>></span></a>
                 </div>
                 <ul class="signal__items">
                     <li class="signal__item">
@@ -139,6 +133,44 @@
         </div>
     </section>
 
+    <section class="way section" id="way">
+        <div class="container">
+            <div class="way__inner">
+                <div class="section__head">
+                    <h2 class="section__title">Путь сигнала</h2>
+                </div>
+                <div class="way__body">
+                    @@include('./html/way-slider.html')
+                    <div class="way__img" id="slider-img">
+                        <img width="3652" src="img/way-slider.jpg" alt="">
+                    </div>
+                    <div class="way__panel" id="slider-panel">
+                        <div class="way__label" id="slider-marker">
+                            <img src="img/label.svg" alt="">
+                        </div>
+                        <div class="way__wifi" id="slider-signal">
+                            <img src="img/wifi.svg" alt="">
+                        </div>
+                        <div class="way__panel-body">
+                            @@include('./img/panel.svg')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <section class="contest section">
+        <div class="container">
+            <div class="contest__inner">
+                <h2 class="contest__title section__title">Конкурс</h2>
+                <div class="contest__text section__text">
+                    Если ты музыкант, диджей, креативное сообщество, музыкальная группа, композитор или просто фантазер, то можешь принять участие, создав и отправив нам что-то интересное. Внимательно ознакомься с правилами участия и отбора на нашем сайте. Если мы отберем твое произведение, то оно будет включено в Сигнал и отправлено в глубины космоса, возможно, навстречу инопланетной цивилизации.
+                </div>
+                <a href="#" class="contest__btn button-brackets">Хочу участвовать</a>
+            </div>
+        </div>
+    </section>
     
     @@include('./html/footer.html')
 

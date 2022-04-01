@@ -78,6 +78,7 @@ button {
 .button {
     text-transform: uppercase;
     display: inline-block;
+    font-weight: 500;
 
     span {
         display: inline-block;
@@ -96,6 +97,47 @@ button {
     }
 }
 
+.button-brackets {
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 4px;
+    width: 350px;
+
+    &::before,
+    &::after {
+        font: inherit;
+        color: inherit;
+        transition: .3s ease;
+    }
+
+    &::before {
+        content: '[';
+    }
+
+    &::after {
+        content: ']';
+    }
+
+    @media screen and (min-width: 768px) {
+        transition: .3s ease;
+        &:hover {
+            color: $white;
+            background-color: $black;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        min-width: 238px;
+        width: auto;
+        display: inline-flex;
+    }
+}
+
 .section {
     padding: 64px 0;
     margin-bottom: 64px;
@@ -106,7 +148,7 @@ button {
     }
 
     &__head {
-        max-width: 342px;
+        max-width: 350px;
         text-align: center;
         margin: 0 auto 48px;
         padding: 24px 0 16px;
@@ -121,8 +163,15 @@ button {
         }
     }
 
+    &__text {
+        margin-top: 24px;
+
+        @media screen and (max-width: 575px) {
+            margin-top: 16px;
+        }
+    }
+
     &__title {
-        margin-bottom: 24px;
         font-size: 48px;
         font-weight: 500;
 
@@ -130,10 +179,9 @@ button {
             font-size: 36px;
         }
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 575px) {
             font-weight: 600;
             font-size: 28px;
-            margin-bottom: 16px;
         }
     }
 

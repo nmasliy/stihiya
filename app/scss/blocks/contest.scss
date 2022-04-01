@@ -1,0 +1,32 @@
+.contest {
+    background-color: $white;
+    color: $black;
+    
+    &__inner {
+        padding: 80px 0;
+        max-width: 646px;
+        margin: 0 auto;
+        text-align: center;
+
+        @media screen and (max-width: 575px) {
+            padding: 0;
+            text-align: left;
+        }
+    }
+
+    &__text {
+        margin-bottom: 48px;
+
+        @media screen and (max-width: 575px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__btn {
+        margin: 0 auto;
+
+        @media screen and (max-width: 575px) {
+            margin-left: 0;
+        }
+    }
+}

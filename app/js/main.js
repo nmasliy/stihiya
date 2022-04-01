@@ -1,6 +1,9 @@
+import Swiper, { Navigation } from 'swiper';
 import { initAccordions } from './components/accordion.js';
 import { initMenu } from './components/menu.js';
 import { initModals } from './components/modals.js';
+
+Swiper.use([Navigation]);
 
 window.addEventListener('DOMContentLoaded', function() {
     
@@ -142,6 +145,125 @@ window.addEventListener('DOMContentLoaded', function() {
             })
         }
     }
+
+    function initWaySlider() {
+        const swiper = new Swiper('.way__slider', {
+            navigation: {
+                nextEl: '.way__btn--next',
+                prevEl: '.way__btn--prev',
+            },
+            autoHeight: true
+        });
+        // /Base swiper init
+    
+        // Custom slider
+        const $sliderBar = document.querySelector('#slider-bar');
+        const $sliderPanel = document.querySelector('#slider-panel');
+        const $sliderImg = document.querySelector('#slider-img');
+        const $sliderMarker = document.querySelector('#slider-marker');
+        // const IMAGE_SIZE = 7640;
+        // const MAX_OFFSET = 5940;
+        const FAULT_PERCENT = 22;
+    
+        function getElementOffsetLeft(element, parent =  $sliderBar) {
+            return element.getBoundingClientRect().left - parent.getBoundingClientRect().left;
+        }
+        
+        const $breakpoints = $sliderBar.querySelectorAll('circle');
+    console.log($breakpoints)
+        $breakpoints.forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                swiper.slideTo(index);
+            })
+        })
+        
+        swiper.on('slideChange', function () {
+            const dotPosition = getElementOffsetLeft($breakpoints[swiper.activeIndex]);
+            const position = +$breakpoints[swiper.activeIndex].getAttribute('cx');
+            const imgOffset = position - (position * FAULT_PERCENT) / 100;
+    
+            $sliderImg.style.left = -imgOffset + 'px';
+        });
+    
+        function initMarker() {
+            $sliderMarker.onmousedown = function(event) {
+                event.preventDefault(); // предотвратить запуск выделения (действие браузера)
+                $sliderImg.style.transition = 'none';
+            
+                const shiftX = event.clientX - $sliderMarker.getBoundingClientRect().left;
+            
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup', onMouseUp);
+            
+                function onMouseMove(event) {
+                    
+                    let newLeft = event.clientX - shiftX - $sliderBar.getBoundingClientRect().left;
+                    // курсор вышел из слайдера => оставить бегунок в его границах.
+                    if (newLeft < 0) {
+                        newLeft = 0;
+                    } else if (newLeft > $sliderPanel.offsetWidth - 30) {
+                        newLeft = $sliderPanel.offsetWidth - 30;
+                    }
+                    let rightEdge = $sliderBar.offsetWidth - $sliderMarker.offsetWidth;
+                    if (newLeft > rightEdge) {
+                        newLeft = rightEdge;
+                    }
+    
+                    $sliderMarker.style.left = newLeft + 'px';
+    
+                    $breakpoints.forEach((item, index) => {
+                        let dotPosition = getElementOffsetLeft(item);
+                        if (dotPosition - newLeft > -30 && dotPosition - newLeft < 30 ) {
+                            swiper.slideTo(index);
+                        }
+                        
+                        let markerPos = Number($sliderMarker.style.left.replace('px',''));
+                        
+                        let imgOffset = newLeft - (newLeft * FAULT_PERCENT) / 100;
+                        $sliderImg.style.left = -imgOffset + 'px';
+                    })
+                }
+            
+                function onMouseUp() {
+                    document.removeEventListener('mouseup', onMouseUp);
+                    document.removeEventListener('mousemove', onMouseMove);
+                    $sliderImg.style.transition = '';
+                    // TODO: сдвиг панели, дальше середины - вперед, меньше - назад
+                }
+            };
+            
+            $sliderMarker.ondragstart = function() {
+                return false;
+            };
+    
+            $sliderBar.addEventListener('click', function(event) {
+                $sliderMarker.style.left = event.offsetX + 'px';
+    
+                const shiftX = event.clientX - $sliderMarker.getBoundingClientRect().left;
+                let newLeft = event.clientX - shiftX - $sliderBar.getBoundingClientRect().left;
+                let markerPosition = Number($sliderMarker.style.left.replace('px',''));
+    
+                let minDistance = Infinity;
+                let nearestDotIndex;
+    
+                $breakpoints.forEach((item, index) => {
+                    let dotPosition = getElementOffsetLeft(item);
+                    
+                    let imgOffset = newLeft - (newLeft * FAULT_PERCENT) / 100;
+                    $sliderImg.style.left = -imgOffset + 'px';
+    
+                    let distance = Math.abs(markerPosition - dotPosition);
+                    if (distance < minDistance) {
+                        nearestDotIndex = index;
+                        minDistance = distance;
+                    }
+                })
+                swiper.slideTo(nearestDotIndex);
+            })
+    
+        }
+        initMarker();
+    }
     
     initAccordions();
     initMenu();
@@ -150,4 +272,5 @@ window.addEventListener('DOMContentLoaded', function() {
     initMusicListRebuilding();
     initAudioPlayer();
     initExpandCover();
+    initWaySlider();
 })
