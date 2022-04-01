@@ -154,7 +154,6 @@ window.addEventListener('DOMContentLoaded', function() {
             },
             autoHeight: true
         });
-        // /Base swiper init
     
         // Custom slider
         const $sliderBar = document.querySelector('#slider-bar');
@@ -170,7 +169,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
         
         const $breakpoints = $sliderBar.querySelectorAll('circle');
-    console.log($breakpoints)
+
         $breakpoints.forEach((item, index) => {
             item.addEventListener('click', function(e) {
                 swiper.slideTo(index);
@@ -193,7 +192,9 @@ window.addEventListener('DOMContentLoaded', function() {
                 const shiftX = event.clientX - $sliderMarker.getBoundingClientRect().left;
             
                 document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('touchmove', onMouseMove);
                 document.addEventListener('mouseup', onMouseUp);
+                document.addEventListener('touchend', onMouseUp);
             
                 function onMouseMove(event) {
                     

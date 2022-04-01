@@ -2,7 +2,6 @@
     "title": "Home page"
 })
 <body>
-
     <section class="hero section">
         <div class="container">
             <div class="hero__inner">
@@ -106,7 +105,7 @@
                                     <div class="music__title">Pink Floyd</div>
                                     <div class="music__subtitle">Shine on you crazy diamond</div>
                                 </div>
-                                <div class="music__icon"></div>
+                                <div class="music__icon" data-micromodal-trigger="modal-1"></div>
                                 <div class="music__arrow">
                                     <img src="img/arrow.svg" alt="">
                                 </div>
@@ -160,19 +159,97 @@
         </div>
     </section>    
 
-    <section class="contest section">
+    <section class="contest section" id="contest">
         <div class="container">
             <div class="contest__inner">
                 <h2 class="contest__title section__title">Конкурс</h2>
                 <div class="contest__text section__text">
                     Если ты музыкант, диджей, креативное сообщество, музыкальная группа, композитор или просто фантазер, то можешь принять участие, создав и отправив нам что-то интересное. Внимательно ознакомься с правилами участия и отбора на нашем сайте. Если мы отберем твое произведение, то оно будет включено в Сигнал и отправлено в глубины космоса, возможно, навстречу инопланетной цивилизации.
                 </div>
-                <a href="#" class="contest__btn button-brackets">Хочу участвовать</a>
+                <a data-micromodal-trigger="modal-2" href="#" class="contest__btn button-brackets">Хочу участвовать</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners section" id="partners">
+        <div class="container">
+            <div class="partners__inner">
+                <div class="section__head">
+                    <h2 class="section__title">Партнеры</h2>
+                </div>
+                <ul class="partners__list">
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-1.webp 1x, img/partners-1@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-1.png" srcset="img/partners-1.png 1x, img/partners-1@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">Фестиваль СТИХИЯ</div>
+                            <div class="partners__text">Фестиваль электронной музыки, искусства и науки «Стихия» является проектом, нацеленным на развитие города Муйнака и в целом на повышение внимания к трагедии Аральского моря. Фестиваль состоит из нескольких проектов, направленных на исследования, развитие и развлечение, и проходит ежегодно в Муйнаке с 2018 года.</div>
+                            <a href="www.stihia.org" class="partners__link">stihia.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-2.webp 1x, img/partners-2@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-2.png" srcset="img/partners-2.png 1x, img/partners-2@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">METI</div>
+                            <div class="partners__text">METI это некоммерческая организация из Сан-Франциско, основанная в 2015 году. Кроме отправки межзвёздных посланий от человечества вероятным разумным существам за пределами Солнечной системы, организация сотрудничает с глобальным проектом SETI, а также проводит исследования в области астробиологии.</div>
+                            <a href="www.meti.org" class="partners__link">meti.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-3.webp 1x, img/partners-3@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-3.png" srcset="img/partners-3.png 1x, img/partners-3@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">Телекоммуникационный центр Гунхилли</div>
+                            <div class="partners__text">Goonhilly Earth Station это гигантский телекоммуникационный центр Великобритании. Парк центра состоит из 30 антенн и радиотелескопов. На данный момент, Гунхилли является первой частной компанией по дальней космической связи и обслуживает проекты НАСА и ЭКА. 30 и 32 метровые антенны станции обеспечивают эффективную связь по важнейшим космическим миссиям, включая лунную программу, исследования Марса, полеты к точкам Лагранжа L1 и L2, а также связь с другими космическими аппаратами в солнечной системе.</div>
+                            <a href="www.goonhilly.org" class="partners__link">goonhilly.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-4.webp 1x, img/partners-4@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-4.png" srcset="img/partners-4.png 1x, img/partners-4@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">Астрономический Институт (АИ) Академии наук Узбекистана</div>
+                            <div class="partners__text">Астрономический Институт (АИ) Академии наук Узбекистана
+                                cоздан в Ташкенте в 1873 году. С конца 19-ого столетия АИ был включен в Международную службу широты. Станция Китаб АИ была одной из пяти станций сети ILS. Сегодня в Китабе размещается наземная станция спутниковой навигационной системы GPS. На сегодняшний день АИ успешно участвует в международных проектах по поиску астероидов, комет и других небесных тел.
+                                </div>
+                            <a href="www.astrin.uz" class="partners__link">astrin.uz</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq section" id="faq">
+        <div class="container">
+            <div class="faq__inner">
+                <div class="section__head">
+                    <h2 class="section__title">FAQ</h2>
+                </div>
+                @@include('./html/faq-content.html')
             </div>
         </div>
     </section>
     
     @@include('./html/footer.html')
+    @@include('./html/modals.html')
 
     @@include('./html/scripts.html')
 </body>
