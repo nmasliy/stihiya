@@ -153,7 +153,8 @@
         }
     }
 
-    &__img {
+    &__images {
+        display: flex;
         position: absolute;
         top: 0;
         left: 0;
@@ -194,7 +195,6 @@
         left: 0;
         top: -10px;
         z-index: 3;
-        user-select: none;
     }
 
     &__panel-body {

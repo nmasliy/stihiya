@@ -1181,7 +1181,10 @@ button {
   right: 157px;
 }
 
-.way__img {
+.way__images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -1197,7 +1200,7 @@ button {
   user-select: none;
 }
 
-.way__img img {
+.way__images img {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -1226,10 +1229,6 @@ button {
   left: 0;
   top: -10px;
   z-index: 3;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .way__panel-body circle {
