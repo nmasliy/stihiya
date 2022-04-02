@@ -36,6 +36,7 @@
     "last 10 versions"
   ],
   "dependencies": {
+    "interactjs": "^1.10.11",
     "normalize.css": "^8.0.1",
     "swiper": "^8.0.7"
   }

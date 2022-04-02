@@ -2,6 +2,7 @@ import Swiper, { Navigation } from 'swiper';
 import { initAccordions } from './components/accordion.js';
 import { initMenu } from './components/menu.js';
 import { initModals } from './components/modals.js';
+import interact from 'interactjs';
 
 Swiper.use([Navigation]);
 
@@ -147,127 +148,249 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     function initWaySlider() {
-        const swiper = new Swiper('.way__slider', {
-            navigation: {
-                nextEl: '.way__btn--next',
-                prevEl: '.way__btn--prev',
-            },
-            autoHeight: true
-        });
-    
-        // Custom slider
-        const $sliderBar = document.querySelector('#slider-bar');
         const $sliderPanel = document.querySelector('#slider-panel');
+        const $sliderBar = $sliderPanel.querySelector('#slider-bar');
         const $sliderImages = document.querySelector('#slider-images');
-        const $sliderImagesItems = $sliderImages.querySelectorAll('.slider__img');
-        const $sliderMarker = document.querySelector('#slider-marker');
-        const IMAGE_SIZE = 1400;
-        const FAULT_PERCENT = 22;
+        const $sliderImagesItems = $sliderImages.querySelectorAll('.way__img');
+        const $sliderMarker = $sliderPanel.querySelector('#slider-marker');
+        const $sliderPrevBtn = document.querySelector('.way__btn--prev');
+        const $sliderNextBtn = document.querySelector('.way__btn--next');
+        
+        const IMAGE_SIZE = $sliderImagesItems[0].offsetWidth;
+
+        const $breakpoints = $sliderBar.querySelectorAll('circle');
+
+        const swiper = new Swiper('.way__slider', {
+            autoHeight: true,
+            allowTouchMove: false,
+            on: {
+                init: function () {
+                    swiperButtonsInit(this);
+                },
+                slideChange: function () {
+                    swiperButtonsInit(this);
+                },
+            },
+        });
+
+        const sliderBarInfo = {
+            width: $sliderPanel.offsetWidth,
+            img: {
+                position: 0,
+            },
+            marker: {
+                position: 0,
+                positionPercentage: 0,
+                positionOnSegment: 0,
+                positionOnSegmentPercentage: 0,
+                distance: {
+                    nearestPoint: null,
+                    siblingPoint: null,
+                    prevPoint: null,
+                    prevPointPercentage: null,
+                },
+            },
+            activeSegment: {
+                distanceBetween: null,
+                leftPoint: {
+                    index: 0,
+                    position: null,
+                },
+                nearestPoint: {
+                    index: 0,
+                    position: null,
+                },
+                siblingPoint: {
+                    index: 1,
+                    position: null,
+                }
+            },
+        }
+
+        $breakpoints.forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                sliderBarInfo.marker.position = +item.getAttribute('cx') - 5;
+                sliderBarInfo.marker.positionPercentage = (sliderBarInfo.marker.position  / sliderBarInfo.width) * 100;
+
+                swiper.slideTo(index);
+
+                const imgOffset = IMAGE_SIZE * swiper.activeIndex;
+                $sliderImages.style.left = -imgOffset + 'px';
+                $sliderMarker.style.paddingLeft = sliderBarInfo.marker.positionPercentage + '%';
+
+            })
+        })
+
+        $sliderPrevBtn.addEventListener('click', function() {
+            const activeIndex = swiper.activeIndex;
+            if (activeIndex > 0) {
+                const newIndex = activeIndex - 1;
+                onSliderButtonClick(newIndex);
+            } else {
+                this.classList.add('disabled');
+            }
+        })
+
+        $sliderNextBtn.addEventListener('click', function() {
+            const activeIndex = swiper.activeIndex;
+
+            if (activeIndex < $breakpoints.length - 1) {
+                const newIndex = activeIndex + 1;
+                onSliderButtonClick(newIndex);
+            } else {
+                this.classList.add('disabled');
+            }
+        })
+
+        function swiperButtonsInit(swiper) {
+            if (swiper.activeIndex < $breakpoints.length -1) {
+                $sliderNextBtn.classList.remove('disabled');
+            } else {
+                $sliderNextBtn.classList.add('disabled');
+            }
+            if (swiper.activeIndex > 0) {
+                $sliderPrevBtn.classList.remove('disabled');
+            } else {
+                $sliderPrevBtn.classList.add('disabled');
+            }
+        }
+
+        function onSliderButtonClick(newIndex) {
+            sliderBarInfo.marker.position = +$breakpoints[newIndex].getAttribute('cx');
+            sliderBarInfo.marker.positionPercentage = (sliderBarInfo.marker.position  / sliderBarInfo.width) * 100;
+
+            swiper.slideTo(newIndex);
+
+            const imgOffset = IMAGE_SIZE * newIndex;
+            $sliderImages.style.left = -imgOffset + 'px';
+            $sliderMarker.style.paddingLeft = sliderBarInfo.marker.positionPercentage + '%';
+        }
     
         function getElementOffsetLeft(element, parent =  $sliderBar) {
             return element.getBoundingClientRect().left - parent.getBoundingClientRect().left;
         }
-        
-        const $breakpoints = $sliderBar.querySelectorAll('circle');
 
-        $breakpoints.forEach((item, index) => {
-            item.addEventListener('click', function(e) {
-                console.log('slide to ', index)
-                swiper.slideTo(index);
-            })
-        })
-        
-        swiper.on('slideChange', function () {
-            const dotPosition = getElementOffsetLeft($breakpoints[swiper.activeIndex]);
-            const position = +$breakpoints[swiper.activeIndex].getAttribute('cx');
-            const imgOffset = IMAGE_SIZE * swiper.activeIndex;
-            console.log('active: ' + swiper.activeIndex)
-            console.log('imgOffset ' + imgOffset)
-    
-            $sliderImages.style.left = -imgOffset + 'px';
-            $sliderMarker.style.left = dotPosition + 'px';
-        });
-    
         function initMarker() {
-            $sliderMarker.onmousedown = function(event) {
-                event.preventDefault(); // предотвратить запуск выделения (действие браузера)
-                $sliderImages.style.transition = 'none';
-            
-                const shiftX = event.clientX - $sliderMarker.getBoundingClientRect().left;
-            
-                document.addEventListener('mousemove', onMouseMove);
-                document.addEventListener('touchmove', onMouseMove);
-                document.addEventListener('mouseup', onMouseUp);
-                document.addEventListener('touchend', onMouseUp);
-            
-                function onMouseMove(event) {
-                    
-                    let newLeft = event.clientX - shiftX - $sliderBar.getBoundingClientRect().left;
-                    // курсор вышел из слайдера => оставить бегунок в его границах.
-                    if (newLeft < 0) {
-                        newLeft = 0;
-                    } else if (newLeft > $sliderPanel.offsetWidth - 30) {
-                        newLeft = $sliderPanel.offsetWidth - 30;
-                    }
+            interact($sliderMarker)   
+                .draggable({
+                    origin: 'self',
+                    modifiers: [
+                        interact.modifiers.restrict({
+                            restriction: 'self',
+                        })
+                    ]
+                })
+                .on('dragmove', function (event) { 
+                    const sliderWidth = interact.getElementRect(event.target.parentNode).width;
+                    const value = (event.pageX / sliderWidth) * 100;
 
-                    let rightEdge = $sliderBar.offsetWidth - $sliderMarker.offsetWidth;
+                    event.target.style.paddingLeft = value + '%';
+                    $sliderImages.style.transition = 'none';
 
-                    if (newLeft > rightEdge) {
-                        newLeft = rightEdge;
-                    }
-    
-                    $sliderMarker.style.left = newLeft + 'px';
-    
-                    $breakpoints.forEach((item, index) => {
-                        let dotPosition = getElementOffsetLeft(item);
+                    calculateDistance(event);
+                    swiper.slideTo(sliderBarInfo.activeSegment.nearestPoint.index);
 
-                        if (dotPosition - newLeft > -30 && dotPosition - newLeft < 30 ) {
-                            swiper.slideTo(index);
-                        }
-                        
-                        let imgOffset = newLeft - (newLeft * FAULT_PERCENT) / 100;
-                        // $sliderImages.style.left = -imgOffset + 'px';
-                    })
-                }
-            
-                function onMouseUp() {
-                    document.removeEventListener('mouseup', onMouseUp);
-                    document.removeEventListener('mousemove', onMouseMove);
+                })
+                .on('dragend', function (event) { 
                     $sliderImages.style.transition = '';
-                    // TODO: сдвиг панели, дальше середины - вперед, меньше - назад
-                }
-            };
+                })
             
-            $sliderMarker.ondragstart = function() {
-                return false;
-            };
-    
-            $sliderBar.addEventListener('click', function(event) {
-                $sliderMarker.style.left = event.offsetX + 'px';
-    
-                const shiftX = event.clientX - $sliderMarker.getBoundingClientRect().left;
-                let newLeft = event.clientX - shiftX - $sliderBar.getBoundingClientRect().left;
-                let markerPosition = Number($sliderMarker.style.left.replace('px',''));
-    
+            // TODO: сдвиг панели, дальше середины - вперед, меньше - назад
+
+            function calculateDistance(event) {
                 let minDistance = Infinity;
-                let nearestDotIndex;
+                let nearestPointIndex;
+                let markerPosition = event.offsetX || event.client.x;
+                let nearestPointPosition;
+                let markerPositionPercentage = (markerPosition / $sliderPanel.offsetWidth) * 100;
+
+                $sliderMarker.style.paddingLeft = markerPositionPercentage + '%';
     
                 $breakpoints.forEach((item, index) => {
-                    let dotPosition = getElementOffsetLeft(item);
+                    let pointPosition = getElementOffsetLeft(item);
                     
-                    let imgOffset = newLeft - (newLeft * FAULT_PERCENT) / 100;
-                    // $sliderImages.style.left = -imgOffset + 'px';
-    
-                    let distance = Math.abs(markerPosition - dotPosition);
+                    let distance = Math.abs(markerPosition - pointPosition);
+                    
                     if (distance < minDistance) {
-                        nearestDotIndex = index;
+                        nearestPointIndex = index;
                         minDistance = distance;
+
+                        nearestPointPosition = pointPosition;
                     }
                 })
-                swiper.slideTo(nearestDotIndex);
+
+                let siblingPointIndex;
+                let siblingPointPosition;
+                
+                if (markerPosition >= nearestPointPosition) {
+                    siblingPointIndex = nearestPointIndex + 1;
+
+                } else {
+                    siblingPointIndex = nearestPointIndex - 1;
+                }
+
+                if (siblingPointIndex < 0) siblingPointIndex = 0;
+                else if (siblingPointIndex >= $breakpoints.length) siblingPointIndex = $breakpoints.length - 1;
+
+                siblingPointPosition = getElementOffsetLeft($breakpoints[siblingPointIndex]);
+
+                let distanceBetween = nearestPointPosition > siblingPointPosition ? nearestPointPosition - siblingPointPosition : siblingPointPosition - nearestPointPosition; // Отнимаем от большего
+                let markerToNearest = nearestPointPosition > markerPosition ? nearestPointPosition - markerPosition : markerPosition - nearestPointPosition; // Отнимаем от большего
+                let markerToSibling = siblingPointPosition > markerPosition ? siblingPointPosition - markerPosition : markerPosition - siblingPointPosition; // Отнимаем от большего
+                let leftPointOffset;
+                let leftPointIndex;
+                let leftPointPosition;
+
+                if (nearestPointPosition <= markerPosition) {
+                    leftPointOffset = markerToNearest;
+                    leftPointIndex = nearestPointIndex;
+                    leftPointPosition = nearestPointPosition;
+                } else {
+                    leftPointOffset = markerToSibling;
+                    leftPointIndex = siblingPointIndex;
+                    leftPointPosition = siblingPointPosition;
+                }
+
+                let positionOnSegment = markerPosition - leftPointPosition;
+                let positionOnSegmentPercentage = positionOnSegment / distanceBetween * 100;
+                let leftPointOffsetPercent = leftPointOffset / distanceBetween * 100;
+
+                let extraOffset = IMAGE_SIZE / 100 * positionOnSegmentPercentage;
+                const imgOffset = IMAGE_SIZE  * leftPointIndex + extraOffset;
+                $sliderImages.style.left = -imgOffset + 'px';
+
+                // Заполняем объект для удобства хранения данных
+                sliderBarInfo.img.position = imgOffset;
+                sliderBarInfo.marker.position = markerPosition;
+                sliderBarInfo.marker.positionPercentage = markerPositionPercentage;
+                sliderBarInfo.marker.positionOnSegment = positionOnSegment;
+                sliderBarInfo.marker.positionOnSegmentPercentage = positionOnSegmentPercentage;
+                sliderBarInfo.marker.distance.nearestPoint = markerToNearest;
+                sliderBarInfo.marker.distance.siblingPoint = markerToSibling;
+                sliderBarInfo.marker.distance.prevPoint = leftPointOffset;
+                sliderBarInfo.marker.distance.prevPointPercentage = leftPointOffsetPercent;
+                sliderBarInfo.activeSegment.distanceBetween = distanceBetween;
+                sliderBarInfo.activeSegment.leftPoint.index = leftPointIndex;
+                sliderBarInfo.activeSegment.leftPoint.position = leftPointPosition;
+                sliderBarInfo.activeSegment.nearestPoint.index = nearestPointIndex;
+                sliderBarInfo.activeSegment.nearestPoint.position = nearestPointPosition;
+                sliderBarInfo.activeSegment.siblingPoint.index = siblingPointIndex;
+                sliderBarInfo.activeSegment.siblingPoint.position = siblingPointPosition;
+
+                // console.log(sliderBarInfo)
+            }
+    
+            $sliderBar.addEventListener('click', function(event) {
+                if (event.target.closest('circle')) return false;
+
+                calculateDistance(event);
+                
+                swiper.slideTo(sliderBarInfo.activeSegment.nearestPoint.index);
             })
     
         }
+        
+        
         initMarker();
     }
     

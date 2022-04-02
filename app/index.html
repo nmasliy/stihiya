@@ -141,15 +141,16 @@
                 <div class="way__body">
                     @@include('./html/way-slider.html')
                     <div class="way__images" id="slider-images">
-                        <!-- <img width="3652" src="img/way-slider.jpg" alt=""> -->
                         @@include('./html/way-slider-images.html')
                     </div>
                     <div class="way__panel" id="slider-panel">
-                        <div class="way__label" id="slider-marker">
-                            <img src="img/label.svg" alt="">
+                        <div class="way__label-wrapper" id="slider-marker">
+                            <div class="way__label" >
+                                <img src="img/label.svg" alt="">
+                            </div>
                         </div>
                         <div class="way__wifi" id="slider-signal">
-                            <img src="img/wifi.svg" alt="">
+                            <img src="img/wifi.svg" draggable="false" alt="">
                         </div>
                         <div class="way__panel-body">
                             @@include('./img/panel.svg')

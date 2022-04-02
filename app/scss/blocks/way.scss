@@ -1,8 +1,4 @@
 .way {
-
-    &__inner {
-    }
-
     &__body {
         display: flex;
         flex-direction: column;
@@ -115,17 +111,24 @@
         cursor: pointer;
         user-select: none;
 
-        @media screen and (max-width: 1024px) {
-            display: none;
+        &.disabled {
+            opacity: .5;
         }
 
-        @media screen and (max-width: 575px) {
-            display: block;
+        @media screen and (max-width: 1024px) {
             font-size: 24px;
             width: 32px;
             height: 32px;
             top: 67px;
             transform: none;
+        }
+
+        @media screen and (max-width: 870px) {
+            top: -30px;
+        }
+
+        @media screen and (max-width: 575px) {
+            top: 67px;
         }
     }
 
@@ -136,7 +139,7 @@
             left: 50px;
         }
 
-        @media screen and (max-width: 575px) {
+        @media screen and (max-width: 1024px) {
             left: 16px;
         }
     }
@@ -148,11 +151,24 @@
             right: 50px;
         }
 
-        @media screen and (max-width: 575px) {
+        @media screen and (max-width: 1024px) {
             right: 16px;
         }
     }
 
+    &__img {
+        width: 100%;
+        min-width: 550px;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: none;
+        }
+    }
+    
     &__images {
         display: flex;
         position: absolute;
@@ -163,12 +179,6 @@
         z-index: -1;
         transition: .5s ease-in-out;
         user-select: none;
-
-        img {
-            height: 100%;
-            object-fit: cover;
-            max-width: none;
-        }
     }
 
     &__panel {
@@ -181,19 +191,20 @@
         }
     }
 
-    &__label {
-        position: absolute;
-        left: 0;
-        top: -17px;
+    &__label-wrapper {
+        margin-right: 15px;
+        position: relative;
         z-index: 6;
-        padding-bottom: 10px;
-        cursor: grab;
+    }
+    
+    &__label {
+        width: 12px;
     }
 
     &__wifi {
         position: absolute;
-        left: 0;
-        top: -10px;
+        left: 15px;
+        top: 10px;
         z-index: 3;
     }
 
