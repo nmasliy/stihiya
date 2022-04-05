@@ -290,6 +290,7 @@ button {
   text-transform: uppercase;
   font-weight: 500;
   max-width: 300px;
+  margin-right: 90px;
 }
 
 .header__burger {
@@ -486,7 +487,7 @@ button {
   margin: auto;
   margin-top: 30px;
   width: 100%;
-  padding: 34px 64px 0;
+  padding: 34px 64px;
 }
 
 .modal__container--center {
@@ -1021,6 +1022,11 @@ button {
   width: calc(33.333% - 16px);
   margin: 0 8px;
   padding: 8px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .music-item.active .music-item__btn {
@@ -1198,6 +1204,10 @@ button {
   -o-object-fit: cover;
   object-fit: cover;
   max-width: none;
+}
+
+.way__img-mob {
+  display: none;
 }
 
 .way__images {
@@ -1451,11 +1461,26 @@ button {
 }
 
 .form__btn-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
   cursor: pointer;
 }
 
 .form__btn-upload input {
-  display: none;
+  opacity: 0;
+  height: 1px;
+  padding: 0;
+  margin-bottom: -1px;
+  border: none;
+}
+
+.form__btn-upload input:valid ~ .form__btn-box {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .form__btn-box {
@@ -1562,6 +1587,10 @@ button {
 
   .header__logo img {
     width: 123px;
+  }
+
+  .header__text {
+    margin-right: 0;
   }
 
   .hero__inner {
@@ -1744,6 +1773,10 @@ button {
   .header__logo img {
     width: 92px;
   }
+
+  .header__text {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -1778,7 +1811,6 @@ button {
   }
 
   .header__text {
-    font-size: 15px;
     text-align: left;
     margin-bottom: 32px;
     max-width: 100%;
@@ -1917,6 +1949,18 @@ button {
     z-index: -1;
   }
 
+  .music__img::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
   .music__img img {
     width: 100%;
     height: 100%;
@@ -1958,6 +2002,14 @@ button {
 
   .way__btn {
     top: 67px;
+  }
+
+  .way__img-mob {
+    display: inline;
+  }
+
+  .way__img-desk {
+    display: none;
   }
 
   .contest__inner {

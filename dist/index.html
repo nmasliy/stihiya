@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="css/libs.min.css">
         <link rel="stylesheet" href="css/style.css">
         <title>Home page</title>
+        <script>
+            window.lang = "ru";
+        </script>
     </head>
 <body>
     <section class="hero section">
@@ -19,7 +22,7 @@
                 <header class="header">
     <div class="header__inner">
         <div class="header__col header__col--logo">
-            <a href="#" class="header__logo logo">
+            <a href="./" class="header__logo logo">
                 <picture>
                     <source srcset="img/logo.webp 1x, img/logo@2x.webp 2x">
                     <img width="205" height="85" src="img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x" alt="Логотип Стихия">
@@ -53,11 +56,11 @@
                 <div class="menu__languages">
                     <div class="menu__languages-line">----------------</div>
                     <div class="menu__languages-items">
-                        <a href="#" class="active">RU</a>
+                        <a href="./" class="active">RU</a>
                         <span>|</span>
-                        <a href="#">EN</a>
+                        <a href="index-en.html">EN</a>
                         <span>|</span>
-                        <a href="#">Uz</a>
+                        <a href="index-uz.html">Uz</a>
                     </div>
                 </div>
             </div>
@@ -145,10 +148,10 @@
                     <div class="music__info">
                         <div class="music__cover">
                             <div class="music__img">
-                                <img width="400" height="400" src="img/audio-cover.png"alt="cover">
+                                <img width="400" height="400" src="img/track-1.jpg"alt="cover">
                             </div>
                             <div id="player-wrapper" class="music__player" data-da=".music__desc,575,2">
-                                <audio id="player" src="files/audio/track-1.mp3" data-volume="0.2">
+                                <audio id="player" src="files/audio/1.mp3" data-volume="0.2">
                                     Your browser does not support the
                                     <code>audio</code> element.
                                 </audio>
@@ -160,8 +163,8 @@
                         <div class="music__desc">
                             <div class="music__head">
                                 <div class="music__head-text">
-                                    <div class="music__title">Pink Floyd</div>
-                                    <div class="music__subtitle">Shine on you crazy diamond</div>
+                                    <div class="music__title">Aril Brikha</div>
+                                    <div class="music__subtitle">Dance of a Trillion Stars</div>
                                 </div>
                                 <div class="music__icon" data-micromodal-trigger="modal-1"></div>
                                 <div class="music__arrow">
@@ -169,8 +172,7 @@
                                 </div>
                             </div>
                             <div class="music__text">
-                                <p>Egestas pellentesque vel sit sed quis. Morbi nec feugiat facilisi morbi metus sit laoreet. Venenatis id ut auctor sit quis. Consequat dolor tellus sed egestas in neque dolor id pellentesque. At vitae scelerisque integer nunc. Nulla cras hac sit purus id.</p>
-                                <p>Vulputate egestas pulvinar ullamcorper lobortis felis elit. Aliquam, etiam nisl, et egestas. Porttitor euismod vel augue accumsan. Id vivamus vel blandit commodo tellus nunc vitae adipiscing arcu. Viverra.</p>
+                                Это мой вклад в Стихию. Название трека говорит само за себя, пронизывая тьму небесных тел, сверкающих в ночном небе, путешествующих в межзвездной пыли. В память о моей любимой матери, Жанет Евазадэ; это для тебя; пусть твоя душа танцует вечно среди звезд &lt;3
                             </div>
                             <div class="music__footer">
                                 <span>Социальные сети:</span>
@@ -184,7 +186,79 @@
                     </div>
                     <div class="music__content">
                         <ul class="music__list">
-    <li class="music-item active" data-audio="files/audio/track-1.mp3" data-cover="img/audio-cover.png">
+    <li class="music-item active" data-id="0">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
+</svg>
+
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Aril Brikha</div>
+            <div class="music-item__subtitle">Dance of a Trillion Stars</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="1">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
+</svg>
+
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Dzenpunk</div>
+            <div class="music-item__subtitle">Море</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="2">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
+</svg>
+
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Эдуард Артемьев</div>
+            <div class="music-item__subtitle">Красота Земли</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="3">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
+</svg>
+
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Flyn Up</div>
+            <div class="music-item__subtitle">I’ll be forming weather</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="4">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
+</svg>
+
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Галия Бисенгалиева</div>
+            <div class="music-item__subtitle">Zhalanash</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="5">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
+</svg>
+
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Kebato</div>
+            <div class="music-item__subtitle">229484</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="6">
         <button class="music-item__btn">
             <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
@@ -193,413 +267,57 @@
         </button>
         <div class="music-item__info">
             <div class="music-item__title">Pink Floyd</div>
-            <div class="music-item__subtitle">Shine on you crazy diamond</div>
+            <div class="music-item__subtitle">Shine on You Crazy Diamond</div>
         </div>
     </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <li class="music-item" data-id="7">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
 </svg>
 
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Polar Inertia</div>
+            <div class="music-item__subtitle">Kinematic Optics</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="8">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
 </svg>
 
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Saphileaum</div>
+            <div class="music-item__subtitle">Cosmic Lake Transparency</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="9">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
 </svg>
 
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">The comet is coming</div>
+            <div class="music-item__subtitle">Journey Through Asteroid Belt</div>
+        </div>
+    </li>
+    <li class="music-item" data-id="10">
+        <button class="music-item__btn">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
 </svg>
 
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
-        <li class="music-item" data-audio="files/audio/track-2.mp3" data-cover="img/audio-cover-2.png">
-            <button class="music-item__btn">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 7L11.2572 7.42875V6.57125L11 7ZM0.742752 1.42875L10.7428 7.42875L11.2572 6.57125L1.25725 0.571254L0.742752 1.42875ZM10.7428 6.57125L0.742752 12.5713L1.25725 13.4287L11.2572 7.42875L10.7428 6.57125Z" fill="white"/>
-</svg>
-
-            </button>
-            <div class="music-item__info">
-                <div class="music-item__title">Pink Floyd</div>
-                <div class="music-item__subtitle">Shine on you crazy diamond</div>
-            </div>
-        </li>
-    
+        </button>
+        <div class="music-item__info">
+            <div class="music-item__title">Владимир Дюбышкин</div>
+            <div class="music-item__subtitle">I decided to fly</div>
+        </div>
+    </li>
 </ul>
                     </div>
                 </div>
@@ -983,149 +701,255 @@
                     <div class="way__images" id="slider-images">
                         
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section1.webp" type="image/webp">
             <img width="1400" height="600" src="img/section1.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section1.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section1.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section2.webp" type="image/webp">
             <img width="1400" height="600" src="img/section2.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section2.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section2.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section3.webp" type="image/webp">
             <img width="1400" height="600" src="img/section3.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section3.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section3.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section4.webp" type="image/webp">
             <img width="1400" height="600" src="img/section4.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section4.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section4.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section5.webp" type="image/webp">
             <img width="1400" height="600" src="img/section5.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section5.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section5.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section6.webp" type="image/webp">
             <img width="1400" height="600" src="img/section6.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section6.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section6.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section7.webp" type="image/webp">
             <img width="1400" height="600" src="img/section7.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section7.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section7.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section8.webp" type="image/webp">
             <img width="1400" height="600" src="img/section8.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section8.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section8.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section9.webp" type="image/webp">
             <img width="1400" height="600" src="img/section9.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section9.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section9.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section10.webp" type="image/webp">
             <img width="1400" height="600" src="img/section10.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section10.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section10.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section11.webp" type="image/webp">
             <img width="1400" height="600" src="img/section11.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section11.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section11.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section12.webp" type="image/webp">
             <img width="1400" height="600" src="img/section12.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section12.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section12.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section13.webp" type="image/webp">
             <img width="1400" height="600" src="img/section13.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section13.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section13.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section14.webp" type="image/webp">
             <img width="1400" height="600" src="img/section14.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section14.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section14.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section15.webp" type="image/webp">
             <img width="1400" height="600" src="img/section15.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section15.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section15.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section16.webp" type="image/webp">
             <img width="1400" height="600" src="img/section16.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section16.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section16.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section17.webp" type="image/webp">
             <img width="1400" height="600" src="img/section17.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section17.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section17.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section18.webp" type="image/webp">
             <img width="1400" height="600" src="img/section18.jpg" alt="section">
         </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section18.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section18.jpg" alt="section">
+        </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section19.webp" type="image/webp">
             <img width="1400" height="600" src="img/section19.jpg" alt="section">
         </picture>
-    </div>
-
-    <div class="way__img">
-        <picture>
-            <source srcset="img/section20.webp" type="image/webp">
-            <img width="1400" height="600" src="img/section20.jpg" alt="section">
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section19.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section19.jpg" alt="section">
         </picture>
     </div>
 
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
+            <source srcset="img/section20.webp" type="image/webp">
+            <img width="1400" height="600" src="img/section20.jpg" alt="section">
+        </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section20.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section20.jpg" alt="section">
+        </picture>
+    </div>
+
+    <div class="way__img">
+        <picture class="way__img-desk">
             <source srcset="img/section21.webp" type="image/webp">
             <img width="1400" height="600" src="img/section21.jpg" alt="section">
+        </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section21.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section21.jpg" alt="section">
+        </picture>
+    </div>
+
+    <div class="way__img">
+        <picture class="way__img-desk">
+            <source srcset="img/section22.webp" type="image/webp">
+            <img width="1400" height="600" src="img/section22.jpg" alt="section">
+        </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section22.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section22.jpg" alt="section">
+        </picture>
+    </div>
+
+    <div class="way__img">
+        <picture class="way__img-desk">
+            <source srcset="img/section23.webp" type="image/webp">
+            <img width="1400" height="600" src="img/section23.jpg" alt="section">
+        </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section23.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section23.jpg" alt="section">
         </picture>
     </div>
 
@@ -1525,20 +1349,20 @@
                     </div>
                 </div>
                 <div class="modal__form form">
-                    <form action="#">
+                    <form id="main-form" action="files/form.php" method="post" enctype="multipart/form-data">
                         <div class="form__title">Заявка на участие</div>
                         <div class="form__item">
-                            <input type="email" placeholder="Адрес e-mail">
+                            <input required type="email" name="email" placeholder="Адрес e-mail">
                         </div>
                         <div class="form__item">
-                            <input type="text" placeholder="Имя артиста">
+                            <input required type="text" name="name" placeholder="Имя артиста">
                         </div>
                         <div class="form__item">
-                            <textarea placeholder="Описание"></textarea>
+                            <textarea required  name="desc" placeholder="Описание"></textarea>
                         </div>
                         <div class="form__item">
                             <label class="form__btn-upload">
-                                <input type="file" name="uploadAudio">
+                                <input required type="file" accept=".wav" name="audio" id="audio-input">
                                 <span class="form__btn-box">Загрузить аудио</span>
                             </label>
                         </div>

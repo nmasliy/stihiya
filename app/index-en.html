@@ -1,0 +1,254 @@
+@@include('./html/head.html', {
+    "title": "Home page",
+    "lang": "en"
+})
+<body>
+    <section class="hero section">
+        <div class="container">
+            <div class="hero__inner">
+                @@include('./html/en/header.html')
+                <div class="hero__content">
+                    <h1 class="hero__title">Deep space radio message</h1>
+                    <div class="hero__text">Stihia festival sends a radio transmission into the deep space using one of the most powerful planetary radars in the world. 30 musicians and artists will send their pieces of music to TRAPPIST-1, exoplanet system in 39 light years from Earth and then to the exoplanet K2-18b, which is located at a distance of 124 light years from Earth.</div>
+                    <a href="#" class="hero__btn button">More<span>>></span></a>
+                    <div class="hero__info">
+                        <h4 class="hero__subtitle">About the project</h4>
+                        <p>It has been said that astronomy is a humbling and character-building experience. Carl Sagan once said “The Earth is the only world known so far to harbor life. There is nowhere else, at least in the near future, to which our species could migrate. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves.”</p>
+                        <p>Stihia sestival sends a radio transmission into the deep space in search for extraterrestrial civilization and warning about global natural disasters. We are conducting this experiment to amplify the voice of intergenerational responsibility and reflect humanity's innate longing for the great unknown.</p>
+                        <p>The radio message consists of musical and graphic elements, including Ulugh Beg’s stellar catalogue and Mendeleev's periodic table. This is also an open call for musicians to participate in this global experiment by sending us their pieces of work. The jury will pick the most suitable works and will include them in the radio message to be sent to the depths of space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="interview section" id="interview">
+        <div class="container">
+            <div class="interview__inner">
+                <div class="interview__content">
+                    <iframe width="1340" height="715" src="https://www.youtube.com/embed/u31qwQUeGuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signal section" id="signal">
+        <div class="container">
+            <div class="signal__inner">
+                <div class="section__head">
+                    <h2 class="section__title">Signal</h2>
+                </div>
+                <ul class="signal__items">
+                    <li class="signal__item">
+                        <a href="#" class="signal__item-inner">
+                            <div class="signal__img">
+                                <picture>
+                                    <source srcset="img/signal-1.webp 1x, img/signal-1@2x.webp 2x">
+                                    <img src="img/signal-1.png" srcset="img/signal-1.png 1x, img/signal-1@2x.png 2x" alt="signal">
+                                </picture>
+                            </div>
+                            <div class="signal__info">
+                                <div class="signal__title">Instruction manual<span>>></span></div>
+                                <div class="signal__text">Ultrices aliquam quam tincidunt lectus cursus vitae. Sit accumsan.</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="signal__item">
+                        <a href="#" class="signal__item-inner">
+                            <div class="signal__img">
+                                <picture>
+                                    <source srcset="img/signal-2.webp 1x, img/signal-2@2x.webp 2x">
+                                    <img src="img/signal-2.png" srcset="img/signal-2.png 1x, img/signal-2@2x.png 2x" alt="signal">
+                                </picture>
+                            </div>
+                            <div class="signal__info">
+                                <div class="signal__title">The Periodic Table<span>>></span></div>
+                                <div class="signal__text">Ultrices aliquam quam tincidunt lectus cursus vitae. Sit accumsan.</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="signal__item">
+                        <a href="#" class="signal__item-inner">
+                            <div class="signal__img">
+                                <picture>
+                                    <source srcset="img/signal-3.webp 1x, img/signal-3@2x.webp 2x">
+                                    <img src="img/signal-3.png" srcset="img/signal-3.png 1x, img/signal-3@2x.png 2x" alt="signal">
+                                </picture>
+                            </div>
+                            <div class="signal__info">
+                                <div class="signal__title">Ulugbek Star Atlas<span>>></span></div>
+                                <div class="signal__text">Ultrices aliquam quam tincidunt lectus cursus vitae. Sit accumsan.</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="signal__music music">
+                    <div class="music__info">
+                        <div class="music__cover">
+                            <div class="music__img">
+                                <img width="400" height="400" src="img/track-1.jpg"alt="cover">
+                            </div>
+                            <div id="player-wrapper" class="music__player" data-da=".music__desc,575,2">
+                                <audio id="player" src="files/audio/1.mp3" data-volume="0.2">
+                                    Your browser does not support the
+                                    <code>audio</code> element.
+                                </audio>
+                                <div id="player-bar" class="music__player-bar">
+                                    <button id="playAudio" class="music__player-btn"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="music__desc">
+                            <div class="music__head">
+                                <div class="music__head-text">
+                                    <div class="music__title">Aril Brikha</div>
+                                    <div class="music__subtitle">Dance of a Trillion Stars</div>
+                                </div>
+                                <div class="music__icon" data-micromodal-trigger="modal-1"></div>
+                                <div class="music__arrow">
+                                    <img src="img/arrow.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="music__text">
+                                This my tribute to the Stihia project. The title track shines through, capturing the essence of celestial bodies emitting their radiance in the night sky, traveling through the interstellar dust. In loving memory of my mother Janet Evazzadeh, this one is for you. May you forever dance among the stars &lt;3
+                            </div>
+                            <div class="music__footer">
+                                <span>Social network</span>
+                                <ul class="socials">
+                                    <li><a href="#"><img src="img/fb.svg" alt="fb"></a></li>
+                                    <li><a href="#"><img src="img/soundcloud.svg" alt="fb"></a></li>
+                                    <li><a href="#"><img src="img/spotify.svg" alt="fb"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="music__content">
+                        @@include('./html/en/music-list.html')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="way section" id="way">
+        <div class="container">
+            <div class="way__inner">
+                <div class="section__head">
+                    <h2 class="section__title">Signal path</h2>
+                </div>
+                <div class="way__body">
+                    @@include('./html/en/way-slider.html')
+                    <div class="way__images" id="slider-images">
+                        @@include('./html/way-slider-images.html')
+                    </div>
+                    <div class="way__panel" id="slider-panel">
+                        <div class="way__label-wrapper" id="slider-marker">
+                            <div class="way__label" >
+                                <img src="img/label.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="way__wifi" id="slider-signal">
+                            <img src="img/wifi.svg" draggable="false" alt="">
+                        </div>
+                        <div class="way__panel-body">
+                            @@include('./img/panel.svg')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <section class="contest section" id="contest">
+        <div class="container">
+            <div class="contest__inner">
+                <h2 class="contest__title section__title">Competition</h2>
+                <div class="contest__text section__text">
+                    If you are a musician, a composer, a creative community, a music band or just a dreamer, you can participate in this project by creating a music track and submitting it to us. Please read the requirements and rules at our site. If your creation is unique and impressive, it will be included into the Transmission and sent into the deep space and may potentially received by extra-terrestrial civilisation
+                </div>
+                <a data-micromodal-trigger="modal-2" href="#" class="contest__btn button-brackets">Хочу участвовать</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners section" id="partners">
+        <div class="container">
+            <div class="partners__inner">
+                <div class="section__head">
+                    <h2 class="section__title">Partners</h2>
+                </div>
+                <ul class="partners__list">
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-1.webp 1x, img/partners-1@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-1.png" srcset="img/partners-1.png 1x, img/partners-1@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">STIHIA</div>
+                            <div class="partners__text">Stihia is electronic music, art and science festival with the mission of attaining sustainable development in the town of Muynak, Uzbekistan. It runs annually since 2018 and raises awareness about the death of the Aral Sea. The festival consists of several multidisciplinary projects aimed at research, development and entertainment.</div>
+                            <a href="www.stihia.org" class="partners__link">stihia.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-2.webp 1x, img/partners-2@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-2.png" srcset="img/partners-2.png 1x, img/partners-2@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">METI</div>
+                            <div class="partners__text">METI is a nonprofit, organization based in San Francisco, which was founded in 2015. In addition to transmitting intentional signals to other star systems, METI supports the development of a global network of optical SETI observatories, and it advances basic research in astrobiology.</div>
+                            <a href="www.meti.org" class="partners__link">meti.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-3.webp 1x, img/partners-3@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-3.png" srcset="img/partners-3.png 1x, img/partners-3@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">Goonhilly telecommunication center</div>
+                            <div class="partners__text">Goonhilly Earth Station Ltd. The UK’s space communications gateway, Goonhilly has more than 30 satellite communication antennas. The company offers the world’s first commercial deep space network, providing necessary additional capacity beyond that of NASA and ESA. Its modified 30m and 32m antennas allow for cost-effective communications with key missions to the Moon, Mars, and the L1 and L2 Lagrange points, as well as other spacecraft across the solar system.</div>
+                            <a href="www.goonhilly.org" class="partners__link">goonhilly.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-4.webp 1x, img/partners-4@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-4.png" srcset="img/partners-4.png 1x, img/partners-4@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">Ulugh Beg Astronomical Institute (UBAI)</div>
+                            <div class="partners__text">Ulugh Beg Astronomical Institute (UBAI) of the Uzbek Academy of Sciences is the oldest scientific institution in Central Asia. It was founded as Tashkent Astronomical observatory in 1873. Since the end of the 19th century UBAI was involved to the International Latitude Service. Kitab station of UBAI was one of five stations of the ILS network. Today Kitab is hosting the ground-based beacon of the GPS satellite navigation system. UBAI is presently involved in many international space programs aimed at </div>
+                            <a href="www.astrin.uz" class="partners__link">astrin.uz</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq section" id="faq">
+        <div class="container">
+            <div class="faq__inner">
+                <div class="section__head">
+                    <h2 class="section__title">FAQ</h2>
+                </div>
+                @@include('./html/en/faq-content.html')
+            </div>
+        </div>
+    </section>
+    
+    @@include('./html/footer.html')
+    @@include('./html/modals.html')
+
+    @@include('./html/scripts.html')
+</body>
+</html>

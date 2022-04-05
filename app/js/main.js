@@ -7,6 +7,7 @@ import interact from 'interactjs';
 Swiper.use([Navigation]);
 
 window.addEventListener('DOMContentLoaded', function() {
+    let tracks = {};
     
     function initHeroShowMore() {
         const $heroBtn = document.querySelector('.hero__btn'); 
@@ -109,13 +110,18 @@ window.addEventListener('DOMContentLoaded', function() {
         $(ui.audio).addEventListener('timeupdate', initProgressBar);
 
         function initTracksSwitch() {
+
             const $musicList = document.querySelector('.music__list'); 
             const $musicImg = document.querySelector('.music__img img'); 
+            const $author = document.querySelector('.music__title'); 
+            const $name = document.querySelector('.music__subtitle'); 
+            const $text = document.querySelector('.music__text'); 
             
             if ($musicList) {
                 $musicList.addEventListener('click', function(e) {
                     if (e.target.closest('.music-item')) {
                         const $item = e.target.closest('.music-item');
+                        const itemData = tracks[$item.dataset.id];
 
                         media.pause();
                         $(ui.play).classList.remove('pause');
@@ -123,10 +129,14 @@ window.addEventListener('DOMContentLoaded', function() {
                         $musicList.querySelectorAll('.music-item').forEach(el => {
                             el.classList.remove('active');
                         })
-    
+
                         $item.classList.add('active');
-                        media.src = $item.dataset.audio;
-                        $musicImg.src = $item.dataset.cover;
+                        $author.textContent = itemData.author[window.lang];
+                        $name.textContent = itemData.name[window.lang];
+                        $text.innerHTML = itemData.text[window.lang];
+                        media.src = itemData.audioSrc;
+                        $musicImg.src = itemData.imgSrc;
+
                         media.play();
                         $(ui.play).classList.add('pause');
                     }
@@ -256,7 +266,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         function onSliderButtonClick(newIndex) {
-            sliderBarInfo.marker.position = +$breakpoints[newIndex].getAttribute('cx');
+            sliderBarInfo.marker.position = +$breakpoints[newIndex].getAttribute('cx') - 5;
             sliderBarInfo.marker.positionPercentage = (sliderBarInfo.marker.position  / sliderBarInfo.width) * 100;
 
             swiper.slideTo(newIndex);
@@ -390,10 +400,53 @@ window.addEventListener('DOMContentLoaded', function() {
     
         }
         
-        
         initMarker();
     }
-    
+
+    function initFormValidation() {
+        const $form = document.querySelector('#main-form');
+        const $audioInput = $form.querySelector('#audio-input');
+        const $formBtnText = $form.querySelector('.form__btn-box');
+
+        $audioInput.addEventListener('change', function() {
+            if ($audioInput.value.includes('.wav')) {
+                $formBtnText.textContent = $audioInput.files.item(0).name;
+            } else {
+                $audioInput.value = '';
+                $formBtnText.textContent = 'Загрузить аудио';
+            }
+        })
+
+        $form.addEventListener('submit', function(e) {
+            if ($audioInput.value.includes('.wav')) {
+                $formBtnText.textContent = $audioInput.files.item(0).name;
+            } else {
+                e.preventDefault();
+                $formBtnText.textContent = 'Загрузить аудио';
+            }
+        })
+
+    }
+
+    function getTracksData() {
+        const requestPath = '../files/data/tracks.json';
+
+        return fetch(requestPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("HTTP error " + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                tracks = {...data};
+            })
+            .catch(function (e) {
+                console.error('Error: ' + e);
+            })
+    }
+
+
     initAccordions();
     initMenu();
     initModals();
@@ -402,4 +455,6 @@ window.addEventListener('DOMContentLoaded', function() {
     initAudioPlayer();
     initExpandCover();
     initWaySlider();
+    initFormValidation();
+    getTracksData();
 })

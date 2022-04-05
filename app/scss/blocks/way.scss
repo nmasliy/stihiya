@@ -167,6 +167,19 @@
             object-fit: cover;
             max-width: none;
         }
+
+        &-mob {
+            display: none;
+            @media screen and (max-width: 575px) {
+                display: inline;
+            }
+        }
+
+        &-desk {
+            @media screen and (max-width: 575px) {
+                display: none;
+            }
+        }
     }
     
     &__images {

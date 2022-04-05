@@ -1,8 +1,12 @@
-@@for (var i = 1; i < 22; i++) {
+@@for (var i = 1; i <= 23; i++) {
     <div class="way__img">
-        <picture>
+        <picture class="way__img-desk">
             <source srcset="img/section`+i+`.webp" type="image/webp">
             <img width="1400" height="600" src="img/section`+i+`.jpg" alt="section">
+        </picture>
+        <picture class="way__img-mob">
+            <source srcset="img/mob_section`+i+`.webp" type="image/webp">
+            <img width="600" height="700" src="img/mob_section`+i+`.jpg" alt="section">
         </picture>
     </div>
 }

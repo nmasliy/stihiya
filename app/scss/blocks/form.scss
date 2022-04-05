@@ -36,9 +36,20 @@
     }
 
     &__btn-upload {
+        display: flex;
+        flex-direction: column-reverse;
         cursor: pointer;
         input {
-            display: none;
+            opacity: 0;
+            height: 1px;
+            padding: 0;
+            margin-bottom: -1px;
+            border: none;
+            &:valid {
+                & ~ .form__btn-box {
+                    background-color: rgba($white, .2);
+                }
+            }
         }
     }
 

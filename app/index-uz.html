@@ -1,0 +1,256 @@
+@@include('./html/head.html', {
+    "title": "Home page",
+    "lang": "uz"
+})
+<body>
+    <section class="hero section">
+        <div class="container">
+            <div class="hero__inner">
+                @@include('./html/uz/header.html')
+                <div class="hero__content">
+                    <h1 class="hero__title">Радиопослание в глубокий космос</h1>
+                    <div class="hero__text">Фестиваль Стихия отправляет радиопослание в глубокий космос с помощью одного из самых мощных в мире планетных радаров. 30 музыкантов и художников отправляют свои произведения к экзопланете K2-18b, которая находится на расстоянии в 124 световых лет от Земли.</div>
+                    <a href="#" class="hero__btn button">Batafsil malumot<span>>></span></a>
+                    <div class="hero__info">
+                        <h4 class="hero__subtitle">О проекте</h4>
+                        <p>Говорят, астрономия прививает скромность и укрепляет характер. Карл Саган скажет: "Земля — пока единственный известный мир, способный поддерживать жизнь. Нам больше некуда уйти — по крайней мере, в ближайшем будущем. Наша планета — лишь одинокая пылинка в окружающей космической тьме. В этой грандиозной пустоте нет ни намёка на то, что кто-то придёт нам на помощь, дабы спасти нас от нас же самих."</p>
+                        <p>Фестиваль Стихия отправляет радиопослание в глубокий космос для поиска внеземной цивилизации и предостережения о глобальных природных катастрофах. Мы проводим этот эксперимент для усиления голоса ответственности перед поколениями и отражения врожденного стремления человечества к большой неизведанности.</p>
+                        <p>Радиопослание состоит из музыкальных и графических элементов, включая периодическую таблицу Менделеева. Музыканты и художники могут отправить нам свои работы, которые будут отобраны на конкурсной основе и включены в радиопослание для отправки в глубины космоса.</p>
+                        <p>О проблеме изменения климата нужно говорить всеми мыслимыми и немыслимыми способами.</p>
+                        <p>Для этого и есть Стихия.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="interview section" id="interview">
+        <div class="container">
+            <div class="interview__inner">
+                <div class="interview__content">
+                    <iframe width="1340" height="715" src="https://www.youtube.com/embed/u31qwQUeGuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signal section" id="signal">
+        <div class="container">
+            <div class="signal__inner">
+                <div class="section__head">
+                    <h2 class="section__title">Signal</h2>
+                </div>
+                <ul class="signal__items">
+                    <li class="signal__item">
+                        <a href="#" class="signal__item-inner">
+                            <div class="signal__img">
+                                <picture>
+                                    <source srcset="img/signal-1.webp 1x, img/signal-1@2x.webp 2x">
+                                    <img src="img/signal-1.png" srcset="img/signal-1.png 1x, img/signal-1@2x.png 2x" alt="signal">
+                                </picture>
+                            </div>
+                            <div class="signal__info">
+                                <div class="signal__title">Ko'rsatma<span>>></span></div>
+                                <div class="signal__text">Ultrices aliquam quam tincidunt lectus cursus vitae. Sit accumsan.</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="signal__item">
+                        <a href="#" class="signal__item-inner">
+                            <div class="signal__img">
+                                <picture>
+                                    <source srcset="img/signal-2.webp 1x, img/signal-2@2x.webp 2x">
+                                    <img src="img/signal-2.png" srcset="img/signal-2.png 1x, img/signal-2@2x.png 2x" alt="signal">
+                                </picture>
+                            </div>
+                            <div class="signal__info">
+                                <div class="signal__title">Davriy Jadval<span>>></span></div>
+                                <div class="signal__text">Ultrices aliquam quam tincidunt lectus cursus vitae. Sit accumsan.</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="signal__item">
+                        <a href="#" class="signal__item-inner">
+                            <div class="signal__img">
+                                <picture>
+                                    <source srcset="img/signal-3.webp 1x, img/signal-3@2x.webp 2x">
+                                    <img src="img/signal-3.png" srcset="img/signal-3.png 1x, img/signal-3@2x.png 2x" alt="signal">
+                                </picture>
+                            </div>
+                            <div class="signal__info">
+                                <div class="signal__title">Ulug'bek Yulduz Atlasi<span>>></span></div>
+                                <div class="signal__text">Ultrices aliquam quam tincidunt lectus cursus vitae. Sit accumsan.</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="signal__music music">
+                    <div class="music__info">
+                        <div class="music__cover">
+                            <div class="music__img">
+                                <img width="400" height="400" src="img/track-1.jpg"alt="cover">
+                            </div>
+                            <div id="player-wrapper" class="music__player" data-da=".music__desc,575,2">
+                                <audio id="player" src="files/audio/1.mp3" data-volume="0.2">
+                                    Your browser does not support the
+                                    <code>audio</code> element.
+                                </audio>
+                                <div id="player-bar" class="music__player-bar">
+                                    <button id="playAudio" class="music__player-btn"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="music__desc">
+                            <div class="music__head">
+                                <div class="music__head-text">
+                                    <div class="music__title">Aril Brikha</div>
+                                    <div class="music__subtitle">Dance of a Trillion Stars</div>
+                                </div>
+                                <div class="music__icon" data-micromodal-trigger="modal-1"></div>
+                                <div class="music__arrow">
+                                    <img src="img/arrow.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="music__text">
+                                Бу Стихиага менинг ҳиссам. Трекнинг номи ўзи учун гапиради, тунги осмонда порлаб турган осмон жисмларининг зулматига кириб, юлдузлараро чангда саёҳат қилади. Севган онам хотирасига Жанет Евазадега; бу сиз учун, она. Юлдузлар орасида руҳингиз абадий рақсга тушсин…
+                            </div>
+                            <div class="music__footer">
+                                <span>Ijtimoiy tarmoqlar:</span>
+                                <ul class="socials">
+                                    <li><a href="#"><img src="img/fb.svg" alt="fb"></a></li>
+                                    <li><a href="#"><img src="img/soundcloud.svg" alt="fb"></a></li>
+                                    <li><a href="#"><img src="img/spotify.svg" alt="fb"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="music__content">
+                        @@include('./html/uz/music-list.html')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="way section" id="way">
+        <div class="container">
+            <div class="way__inner">
+                <div class="section__head">
+                    <h2 class="section__title">Signal yonalishi</h2>
+                </div>
+                <div class="way__body">
+                    @@include('./html/uz/way-slider.html')
+                    <div class="way__images" id="slider-images">
+                        @@include('./html/way-slider-images.html')
+                    </div>
+                    <div class="way__panel" id="slider-panel">
+                        <div class="way__label-wrapper" id="slider-marker">
+                            <div class="way__label" >
+                                <img src="img/label.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="way__wifi" id="slider-signal">
+                            <img src="img/wifi.svg" draggable="false" alt="">
+                        </div>
+                        <div class="way__panel-body">
+                            @@include('./img/panel.svg')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <section class="contest section" id="contest">
+        <div class="container">
+            <div class="contest__inner">
+                <h2 class="contest__title section__title">Tanlov</h2>
+                <div class="contest__text section__text">
+                    Агар сиз мусиқачи, диджей, ижодий ҳамжамият, мусиқий гуруҳ, бастакор ёки шунчаки хаёлпараст бўлсангиз, унда сиз бизга қизиқарли асар яратиш ва юбориш орқали иштирок этишингиз мумкин. Веб-сайтимиздаги иштирок этиш ва танлов қоидалари билан диққат билан танишиб чиқинг. Агар биз сизнинг асарингизни танласак, у Сигналга киритилади ва коинот тубига, эҳтимол, бегона цивилизация сари, юборилади
+                </div>
+                <a data-micromodal-trigger="modal-2" href="#" class="contest__btn button-brackets">Ishtirok etishni xohlayman</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners section" id="partners">
+        <div class="container">
+            <div class="partners__inner">
+                <div class="section__head">
+                    <h2 class="section__title">Hamkorlar</h2>
+                </div>
+                <ul class="partners__list">
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-1.webp 1x, img/partners-1@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-1.png" srcset="img/partners-1.png 1x, img/partners-1@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">СТИХИЯ</div>
+                            <div class="partners__text">"Стихия" електрон мусиқа, санъат ва фан фестивали Мўйноқ шаҳрини ривожлантириш ва Орол денгизи фожиасига еътиборни оширишга қаратилган лойиҳадир. Фестивал тадқиқот, ривожлантириш ва кўнгил очишга қаратилган бир нечта лойиҳалардан иборат бўлиб, ҳар йили Мўйноқда 2018 йилдан бери ўтказиб келинмоқда.</div>
+                            <a href="www.stihia.org" class="partners__link">stihia.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-2.webp 1x, img/partners-2@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-2.png" srcset="img/partners-2.png 1x, img/partners-2@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">МЕТИ</div>
+                            <div class="partners__text">МЕТИ 2015 йилда ташкил етилган ва Сан-Францискода жойлашган нотижорат ташкилотдир. Қуёш тизимидан ташқаридаги еҳтимолий ердан ташқари цивилизацияларга юлдузлараро хабарларни юборишдан ташқари, ташкилот SETI лойиҳаси билан ҳамкорлик қилади, шунингдек астробиология соҳасида тадқиқотлар олиб боради.</div>
+                            <a href="www.meti.org" class="partners__link">meti.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-3.webp 1x, img/partners-3@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-3.png" srcset="img/partners-3.png 1x, img/partners-3@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">Гунҳилли телекоммуникация маркази</div>
+                            <div class="partners__text">Гунҳилли - Буюк Британиядаги улкан телекоммуникация маркази. Марказнинг ускунлари 30 антеннадан ва радио телескоплардан иборат. Айни пайтда Гунҳилли чуқур космик алоқа учун енг йирик хусусий компанияси бўлиб, НАСА ва ЕКА лойиҳаларига хизмат қилади. Станция енг муҳим космик лойиҳалар, шу жумладан ой дастури, Марсни ўрганиш, Лагранж пунктларига парвозлар ва бошқалар бўйича алоқани таъминлайди.</div>
+                            <a href="www.goonhilly.org" class="partners__link">goonhilly.org</a>
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__img">
+                            <picture>
+                                <source srcset="img/partners-4.webp 1x, img/partners-4@2x.webp 2x">
+                                <img width="290" height="190" src="img/partners-4.png" srcset="img/partners-4.png 1x, img/partners-4@2x.png 2x" alt="partners">
+                            </picture>
+                        </div>
+                        <div class="partners__info">
+                            <div class="partners__title">Ўзбекистон Республикаси Фанлар академияси Астрономия институти</div>
+                            <div class="partners__text">Ўзбекистон Республикаси Фанлар академияси Астрономия институти (АИ) – нафақат Ўзбекистондаги, балки бутун Марказий Осиёдаги кўҳна илм даргоҳидир. Институт 1873 йилда Тошкент Астрономия обсерваторияси сифатида ташкил этилган. 19-аср охиридан АИ Халқаро кенглик хизмати сафига қўшилган. АИнинг Китоб станцияси ILS тизимининг бешта станциясидан бири бўлган. Бугнги кунда Китоб станциясида GPS йўлдош навигацион тизимининг ердаги станцияси ўрнатилган. Бугунги кунга қадар АИ астероидлар, кометалар ва бошқа осмон жисмларини қидириш бўйича халқаро лойиҳаларда муваффақиятли иштирок етмоқда.</div>
+                            <a href="www.astrin.uz" class="partners__link">astrin.uz</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq section" id="faq">
+        <div class="container">
+            <div class="faq__inner">
+                <div class="section__head">
+                    <h2 class="section__title">FAQ</h2>
+                </div>
+                @@include('./html/uz/faq-content.html')
+            </div>
+        </div>
+    </section>
+    
+    @@include('./html/footer.html')
+    @@include('./html/modals.html')
+
+    @@include('./html/scripts.html')
+</body>
+</html>

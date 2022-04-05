@@ -133,20 +133,20 @@
                     </div>
                 </div>
                 <div class="modal__form form">
-                    <form action="#">
+                    <form id="main-form" action="files/form.php" method="post" enctype="multipart/form-data">
                         <div class="form__title">Заявка на участие</div>
                         <div class="form__item">
-                            <input type="email" placeholder="Адрес e-mail">
+                            <input required type="email" name="email" placeholder="Адрес e-mail">
                         </div>
                         <div class="form__item">
-                            <input type="text" placeholder="Имя артиста">
+                            <input required type="text" name="name" placeholder="Имя артиста">
                         </div>
                         <div class="form__item">
-                            <textarea placeholder="Описание"></textarea>
+                            <textarea required  name="desc" placeholder="Описание"></textarea>
                         </div>
                         <div class="form__item">
                             <label class="form__btn-upload">
-                                <input type="file" name="uploadAudio">
+                                <input required type="file" accept=".wav" name="audio" id="audio-input">
                                 <span class="form__btn-box">Загрузить аудио</span>
                             </label>
                         </div>
