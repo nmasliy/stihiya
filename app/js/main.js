@@ -429,7 +429,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     function getTracksData() {
-        const requestPath = '../files/data/tracks.json';
+        const requestPath = 'files/data/tracks.json';
 
         return fetch(requestPath)
             .then(response => {
