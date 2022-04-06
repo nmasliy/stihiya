@@ -16,6 +16,7 @@
         @media screen and (max-width: 575px) {
             min-height: 635px; 
             margin: 0 -16px;
+            padding-top: 100px;
         }
     }
 
@@ -27,6 +28,10 @@
         position: relative;
         z-index: 3;
         box-sizing: border-box;
+
+        @media screen and (max-width: 575px) {
+            max-height: 650px;
+        }
     }
 
     &__slider-wrapper {
@@ -196,11 +201,20 @@
 
     &__panel {
         position: absolute;
-        right: 0;
+        left: 130px;
         bottom: 0;
         z-index: 3;
+
         @media screen and (max-width: 1024px) {
             bottom: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            left: 300px;
+        }
+
+        @media screen and (max-width: 575px) {
+            left: 150px;
         }
     }
 
@@ -226,4 +240,7 @@
             cursor: pointer;
         }
     }
+}
+#slider-bar {
+    width: 5857px;
 }

@@ -40,13 +40,12 @@
     &__head {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
 
     &__icon {
-        width: 20px;
+        width: 24px;
         height: 20px;
-        background-color: $white;
         flex-shrink: 0;
         margin-left: auto;
         margin-right: 30px;

@@ -160,9 +160,11 @@ window.addEventListener('DOMContentLoaded', function() {
     function initWaySlider() {
         const $sliderPanel = document.querySelector('#slider-panel');
         const $sliderBar = $sliderPanel.querySelector('#slider-bar');
+        const $sliderBody = document.querySelector('.way__body');
         const $sliderImages = document.querySelector('#slider-images');
         const $sliderImagesItems = $sliderImages.querySelectorAll('.way__img');
         const $sliderMarker = $sliderPanel.querySelector('#slider-marker');
+        const $sliderMarkerIcon = $sliderMarker.querySelector('.way__label');
         const $sliderPrevBtn = document.querySelector('.way__btn--prev');
         const $sliderNextBtn = document.querySelector('.way__btn--next');
         
@@ -185,12 +187,17 @@ window.addEventListener('DOMContentLoaded', function() {
 
         const sliderBarInfo = {
             width: $sliderPanel.offsetWidth,
+            visibleWidth: $sliderBody.offsetWidth,
+            startPosition: 130,
+            endPosition: 4600,
+            position: 130,
             img: {
                 position: 0,
             },
             marker: {
                 position: 0,
                 positionPercentage: 0,
+                positionPercentageOnVisible: 0,
                 positionOnSegment: 0,
                 positionOnSegmentPercentage: 0,
                 distance: {
@@ -217,6 +224,16 @@ window.addEventListener('DOMContentLoaded', function() {
             },
         }
 
+        if (window.innerWidth <= 575) {
+            sliderBarInfo.startPosition = 150;
+            sliderBarInfo.endPosition = 5400;
+        } else if (window.innerWidth <= 768) {
+            sliderBarInfo.endPosition = 5400;
+            sliderBarInfo.startPosition = 300;
+        }
+
+        sliderBarInfo.position = sliderBarInfo.startPosition;
+
         $breakpoints.forEach((item, index) => {
             item.addEventListener('click', function(e) {
                 sliderBarInfo.marker.position = +item.getAttribute('cx') - 5;
@@ -228,6 +245,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 $sliderImages.style.left = -imgOffset + 'px';
                 $sliderMarker.style.paddingLeft = sliderBarInfo.marker.positionPercentage + '%';
 
+                calculateSidebarOffset();
             })
         })
 
@@ -299,13 +317,11 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     calculateDistance(event);
                     swiper.slideTo(sliderBarInfo.activeSegment.nearestPoint.index);
-
                 })
                 .on('dragend', function (event) { 
+                    calculateSidebarOffset();
                     $sliderImages.style.transition = '';
                 })
-            
-            // TODO: сдвиг панели, дальше середины - вперед, меньше - назад
 
             function calculateDistance(event) {
                 let minDistance = Infinity;
@@ -313,8 +329,10 @@ window.addEventListener('DOMContentLoaded', function() {
                 let markerPosition = event.offsetX || event.client.x;
                 let nearestPointPosition;
                 let markerPositionPercentage = (markerPosition / $sliderPanel.offsetWidth) * 100;
+                let positionPercentageOnVisible = (markerPosition / sliderBarInfo.visibleWidth) * 100;
 
                 $sliderMarker.style.paddingLeft = markerPositionPercentage + '%';
+
     
                 $breakpoints.forEach((item, index) => {
                     let pointPosition = getElementOffsetLeft(item);
@@ -373,6 +391,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 sliderBarInfo.img.position = imgOffset;
                 sliderBarInfo.marker.position = markerPosition;
                 sliderBarInfo.marker.positionPercentage = markerPositionPercentage;
+                sliderBarInfo.marker.positionPercentageOnVisible = positionPercentageOnVisible;
                 sliderBarInfo.marker.positionOnSegment = positionOnSegment;
                 sliderBarInfo.marker.positionOnSegmentPercentage = positionOnSegmentPercentage;
                 sliderBarInfo.marker.distance.nearestPoint = markerToNearest;
@@ -386,18 +405,38 @@ window.addEventListener('DOMContentLoaded', function() {
                 sliderBarInfo.activeSegment.nearestPoint.position = nearestPointPosition;
                 sliderBarInfo.activeSegment.siblingPoint.index = siblingPointIndex;
                 sliderBarInfo.activeSegment.siblingPoint.position = siblingPointPosition;
-
-                // console.log(sliderBarInfo)
             }
-    
+
             $sliderBar.addEventListener('click', function(event) {
+
                 if (event.target.closest('circle')) return false;
 
                 calculateDistance(event);
+                calculateSidebarOffset();
                 
                 swiper.slideTo(sliderBarInfo.activeSegment.nearestPoint.index);
             })
-    
+        }
+
+        function calculateSidebarOffset() {
+            const center = sliderBarInfo.visibleWidth / 2;
+
+            let pos = getElementOffsetLeft($sliderMarkerIcon, $sliderBody);
+            let newOffset;
+            if (pos <= center ) {
+                newOffset = -(pos + center);
+            } else {
+                newOffset = pos - center;
+            }
+            let newPos = sliderBarInfo.position -newOffset;
+
+            // Обрабатываем края полоски
+            if (newPos >= sliderBarInfo.startPosition) newPos = sliderBarInfo.startPosition;
+            else if (newPos <= -sliderBarInfo.endPosition) {
+                newPos = -sliderBarInfo.endPosition; 
+            }
+            $sliderPanel.style.left = newPos + 'px';
+            sliderBarInfo.position = newPos;
         }
         
         initMarker();

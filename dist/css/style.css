@@ -872,15 +872,14 @@ button {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .music__icon {
-  width: 20px;
+  width: 24px;
   height: 20px;
-  background-color: #fff;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   margin-left: auto;
@@ -1231,7 +1230,7 @@ button {
 
 .way__panel {
   position: absolute;
-  right: 0;
+  left: 130px;
   bottom: 0;
   z-index: 3;
 }
@@ -1255,6 +1254,10 @@ button {
 
 .way__panel-body circle {
   cursor: pointer;
+}
+
+#slider-bar {
+  width: 5857px;
 }
 
 .contest {
@@ -1765,6 +1768,12 @@ button {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .way__panel {
+    left: 300px;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .container {
     padding: 0 30px;
@@ -1986,6 +1995,11 @@ button {
   .way__body {
     min-height: 635px;
     margin: 0 -16px;
+    padding-top: 100px;
+  }
+
+  .way__slider {
+    max-height: 650px;
   }
 
   .way__slider-wrapper {
@@ -2010,6 +2024,10 @@ button {
 
   .way__img-desk {
     display: none;
+  }
+
+  .way__panel {
+    left: 150px;
   }
 
   .contest__inner {
