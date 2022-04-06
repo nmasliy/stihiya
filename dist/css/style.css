@@ -498,6 +498,7 @@ button {
   width: 100%;
   height: 100%;
   position: relative;
+  margin-bottom: 30px;
 }
 
 .modal__header {
@@ -884,6 +885,7 @@ button {
   flex-shrink: 0;
   margin-left: auto;
   margin-right: 30px;
+  cursor: pointer;
 }
 
 .music__arrow {
@@ -1239,6 +1241,8 @@ button {
   margin-right: 15px;
   position: relative;
   z-index: 6;
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
 .way__label {

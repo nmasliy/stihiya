@@ -306,13 +306,11 @@ window.addEventListener('DOMContentLoaded', function() {
                         interact.modifiers.restrict({
                             restriction: 'self',
                         })
-                    ]
+                    ],
                 })
                 .on('dragmove', function (event) { 
-                    const sliderWidth = interact.getElementRect(event.target.parentNode).width;
-                    const value = (event.pageX / sliderWidth) * 100;
-
-                    event.target.style.paddingLeft = value + '%';
+                    const value = (event.pageX / sliderBarInfo.width) * 100;
+                    // event.target.style.paddingLeft = value + '%';
                     $sliderImages.style.transition = 'none';
 
                     calculateDistance(event);
@@ -332,7 +330,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 let positionPercentageOnVisible = (markerPosition / sliderBarInfo.visibleWidth) * 100;
 
                 $sliderMarker.style.paddingLeft = markerPositionPercentage + '%';
-
     
                 $breakpoints.forEach((item, index) => {
                     let pointPosition = getElementOffsetLeft(item);

@@ -222,6 +222,7 @@
         margin-right: 15px;
         position: relative;
         z-index: 6;
+        touch-action: none;
     }
     
     &__label {
