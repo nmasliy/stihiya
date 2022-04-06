@@ -292,6 +292,7 @@ window.addEventListener('DOMContentLoaded', function() {
             const imgOffset = IMAGE_SIZE * newIndex;
             $sliderImages.style.left = -imgOffset + 'px';
             $sliderMarker.style.paddingLeft = sliderBarInfo.marker.positionPercentage + '%';
+            calculateSidebarOffset();
         }
     
         function getElementOffsetLeft(element, parent =  $sliderBar) {
@@ -310,7 +311,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 })
                 .on('dragmove', function (event) { 
                     const value = (event.pageX / sliderBarInfo.width) * 100;
-                    // event.target.style.paddingLeft = value + '%';
                     $sliderImages.style.transition = 'none';
 
                     calculateDistance(event);

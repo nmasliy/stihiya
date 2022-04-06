@@ -1640,9 +1640,9 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     padding: 8px;
   }
 
@@ -1650,6 +1650,7 @@ button {
     margin-right: 16px;
     margin-bottom: 0;
     width: 25%;
+    padding-top: 5px;
   }
 
   .signal__img img {
