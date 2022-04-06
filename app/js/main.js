@@ -318,6 +318,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 })
                 .on('dragend', function (event) { 
                     calculateSidebarOffset();
+
                     $sliderImages.style.transition = '';
                 })
 
@@ -419,13 +420,13 @@ window.addEventListener('DOMContentLoaded', function() {
             const center = sliderBarInfo.visibleWidth / 2;
 
             let pos = getElementOffsetLeft($sliderMarkerIcon, $sliderBody);
-            let newOffset;
+            let newPos;
+
             if (pos <= center ) {
-                newOffset = -(pos + center);
+                newPos = -(sliderBarInfo.marker.position - center);
             } else {
-                newOffset = pos - center;
+                newPos = sliderBarInfo.position - (pos - center);
             }
-            let newPos = sliderBarInfo.position -newOffset;
 
             // Обрабатываем края полоски
             if (newPos >= sliderBarInfo.startPosition) newPos = sliderBarInfo.startPosition;
