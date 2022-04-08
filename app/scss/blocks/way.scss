@@ -174,9 +174,23 @@
             max-width: none;
         }
 
+        @media screen and (max-width: 575px) {
+            min-width: auto;
+        }
+
         &-mob {
             display: none;
             @media screen and (max-width: 575px) {
+                display: inline;
+            }
+            @media screen and (max-width: 430px) {
+                display: none;
+            }
+        }
+
+        &-xs {
+            display: none;
+            @media screen and (max-width: 430px) {
                 display: inline;
             }
         }

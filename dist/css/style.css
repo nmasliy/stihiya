@@ -1243,6 +1243,10 @@ button {
   display: none;
 }
 
+.way__img-xs {
+  display: none;
+}
+
 .way__images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2079,6 +2083,10 @@ button {
     top: 67px;
   }
 
+  .way__img {
+    min-width: auto;
+  }
+
   .way__img-mob {
     display: inline;
   }
@@ -2124,5 +2132,15 @@ button {
 
   .form__title {
     font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .way__img-mob {
+    display: none;
+  }
+
+  .way__img-xs {
+    display: inline;
   }
 }
