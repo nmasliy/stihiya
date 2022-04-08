@@ -1,5 +1,5 @@
 .hero {
-    background: url('../img/hero-bg.png') no-repeat center top / cover;
+    background: url('../img/hero-bg.gif') no-repeat center top / cover;
 
     @supports (-webkit-appearance:none) {
         background-image: url('../img/hero-bg.webp');

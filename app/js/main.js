@@ -8,7 +8,7 @@ Swiper.use([Navigation]);
 window.addEventListener('DOMContentLoaded', function() {
     let tracks = {};
     let signal = {};
-    let signalStartTime = 123;
+    let startDate = '2022-01-01'; 
     
     function initHeroShowMore() {
         const $heroBtn = document.querySelector('.hero__btn'); 
@@ -443,12 +443,12 @@ window.addEventListener('DOMContentLoaded', function() {
         function setSignalDistanceKm() {
             const $signalValue = document.querySelector('.header__signal-value');
 
-            $signalValue.textContent = Math.round(signalStartTime * 299792.46);
+            $signalValue.textContent = Math.round(parseInt((new Date().getTime()/1000) - (new Date(startDate).getTime()/1000)) * 299792.46);
         }
 
         function moveSignal() {
             const leftOffset = 4;
-            const signalPosition = Math.round(signalStartTime) * 0.00000149870606712821 + leftOffset;
+            const signalPosition = Math.round(parseInt((new Date().getTime()/1000) - (new Date(startDate).getTime()/1000)) * 0.00000149870606712821) + leftOffset;
             $sliderSignal.style.left = signalPosition + 'px';
         }
         
