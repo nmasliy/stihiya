@@ -94,7 +94,8 @@
         font-size: 13px;
         text-align: center;
         letter-spacing: 0.09em;
-        word-break: break-all;
+        word-wrap: break-word;
+        overflow: hidden;
         padding: 0 16px;
 
         @media screen and (max-width: 575px) {

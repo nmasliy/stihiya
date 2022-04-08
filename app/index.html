@@ -4,10 +4,10 @@
     "desc": "Фестиваль «Стихия» отправляет радиопослание в глубокий космос для поиска внеземной цивилизации и предостережения о глобальных природных катастрофах. Сигнал отправляется к системе TRAPPIST-1  и K2-18b, в 40 и 124 световых годах от Земли. В рамках этого проекта любым музыкантам предлагается возможность принять участие  и отправить свою музыку в глубокий космос. "
 })
 <body>
+    @@include('./html/header.html')
     <section class="hero section">
         <div class="container">
             <div class="hero__inner">
-                @@include('./html/header.html')
                 <div class="hero__content">
                     <h1 class="hero__title">Радиопослание в глубокий космос</h1>
                     <div class="hero__text">Фестиваль Стихия отправляет радиопослание в глубокий космос с помощью одного из самых мощных в мире планетных радаров. 30 музыкантов и художников отправляют свои произведения к экзопланете K2-18b, которая находится на расстоянии в 124 световых лет от Земли.</div>
@@ -42,8 +42,8 @@
                     <h2 class="section__title">Сигнал</h2>
                 </div>
                 <ul class="signal__items">
-                    <li class="signal__item">
-                        <a href="#" class="signal__item-inner">
+                    <li class="signal__item" data-id="0">
+                        <div class="signal__item-inner">
                             <div class="signal__img">
                                 <picture>
                                     <source srcset="img/signal-1.webp 1x, img/signal-1@2x.webp 2x">
@@ -51,13 +51,13 @@
                                 </picture>
                             </div>
                             <div class="signal__info">
-                                <div class="signal__title">Инструкция<span>>></span></div>
+                                <div class="signal__title">Инструкция<span data-micromodal-trigger="modal-1"><img src="img/download.svg" width="24" alt=""></span></div>
                                 <div class="signal__text">На протяжении более 100 лет человечество посылает в космос радиосигналы. Хотя большая часть сигналов затухает слишком быстро, некоторые сигналы могут передаваться на огромные расстояния. Все, что нам нужно, это мощная передающая система. Кроме того, Вселенная — довольно шумное место. Небесные тела постоянно генерируют сигналы гораздо более мощные, чем те, которые генерируем мы. Как же внеземной разум может «расслышать» нас через этот шум? Более того, когда они получат сигнал, как сделать так, чтобы они не только поняли, что это искусственный сигнал, но и расшифровали его? Это невероятно сложная лингвистическая и инженерная задача. Вместе с учеными из METI мы разрабатываем инструкцию, некий словарь, который по идее должен помочь внеземному разуму не только услышать нас, но и понять.</div>
                             </div>
-                        </a>
+                        </div>
                     </li>
-                    <li class="signal__item">
-                        <a href="#" class="signal__item-inner">
+                    <li class="signal__item" data-id="1">
+                        <div  class="signal__item-inner">
                             <div class="signal__img">
                                 <picture>
                                     <source srcset="img/signal-2.webp 1x, img/signal-2@2x.webp 2x">
@@ -65,13 +65,13 @@
                                 </picture>
                             </div>
                             <div class="signal__info">
-                                <div class="signal__title">Таблица Менделеева<span>>></span></div>
+                                <div class="signal__title">Таблица Менделеева<span data-micromodal-trigger="modal-1"><img src="img/download.svg" width="24" alt=""></span></div>
                                 <div class="signal__text">Сообщения на языке математики и науке служат отправной точкой для связи с возможной внеземной цивилизацией в системе TRAPPIST-1. Мы зашифровали таблицу Менделеева в наше радиопослание в двоичном коде. Таблица передается с использованием метода модуляции, называемого квадратурной фазовой манипуляцией (QPSK), который позволяет ученым передавать красные, белые и черные квадраты в сообщении с различными типами сигналов. Это повысит вероятность дешифровки таблицы возможным внеземным разумом.</div>
                             </div>
-                        </a>
+                        </div>
                     </li>
-                    <li class="signal__item">
-                        <a href="#" class="signal__item-inner">
+                    <li class="signal__item" data-id="2">
+                        <div class="signal__item-inner">
                             <div class="signal__img">
                                 <picture>
                                     <source srcset="img/signal-3.webp 1x, img/signal-3@2x.webp 2x">
@@ -79,13 +79,13 @@
                                 </picture>
                             </div>
                             <div class="signal__info">
-                                <div class="signal__title">Звездный атлас Улугбека<span>>></span></div>
+                                <div class="signal__title">Звездный атлас Улугбека<span data-micromodal-trigger="modal-1"><img src="img/download.svg" width="24" alt=""></span></div>
                                 <div class="signal__text">В 1437 году Улугбек – величайший Самаркандский ученный, астроном, составил звездный атлас при помощи разработанного по собственным чертежам обсерватории. Мы отправляем координаты звезд из каталога шестисотлетней давности, а также современные координаты этих же звезд. Мы хотим, чтобы пытливый ум человека был показан, как инструмент познания природы и созидания блага. Мы хотим показать, что прогресс может и должен быть носителем благой человеческой мечты.</div>
                             </div>
-                        </a>
+                        </div>
                     </li>
                 </ul>
-                <div class="signal__music music">
+                <div class="signal__music music" data-id="0">
                     <div class="music__info">
                         <div class="music__cover">
                             <div class="music__img">

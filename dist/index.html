@@ -17,57 +17,59 @@
         </script>
     </head>
 <body>
-    <section class="hero section">
-        <div class="container">
-            <div class="hero__inner">
-                <header class="header">
-    <div class="header__inner">
-        <div class="header__col header__col--logo">
-            <a href="./" class="header__logo logo">
-                <picture>
-                    <source srcset="img/logo.webp 1x, img/logo@2x.webp 2x">
-                    <img width="205" height="85" src="img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x" alt="Логотип Стихия">
-                </picture>
-            </a>
-        </div>
-        <div class="header__col header__text" data-da=".hero__content,575,first">
-            Distance passed: 321 km <br>
-            Arrival date: 11 Oct 2146
-        </div>
-        <div class="header__col header__burger">
-            <div class="header__burger-caption" data-menu-active="Закрыть" data-menu-default="Меню">Меню</div>
-            <div class="header__burger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__col header__col--logo">
+                <a href="./" class="header__logo logo">
+                    <picture>
+                        <source srcset="img/logo.webp 1x, img/logo@2x.webp 2x">
+                        <img width="205" height="85" src="img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x" alt="Логотип Стихия">
+                    </picture>
+                </a>
             </div>
-        </div>
-        <div class="header__menu menu">
-            <div class="menu__inner">
-                <nav class="menu__navigation navigation">
-                    <ul>
-                        <li><a href="#interview">Интервью</a></li>
-                        <li><a href="#signal">Сигнал</a></li>
-                        <li><a href="#way">Путь сигнала</a></li>
-                        <li><a href="#contest">Конкурс</a></li>
-                        <li><a href="#partners">Партнеры</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </nav>
-                <div class="menu__languages">
-                    <div class="menu__languages-line">----------------</div>
-                    <div class="menu__languages-items">
-                        <a href="./" class="active">RU</a>
-                        <span>|</span>
-                        <a href="index-en.html">EN</a>
-                        <span>|</span>
-                        <a href="index-uz.html">Uz</a>
+            <div class="header__col header__text" data-da=".hero__content,575,first">
+                Сигнал пролетел: <span class="header__signal-value">321</span> км <br>
+                Дата достижения цели: 11 октября 2146
+            </div>
+            <div class="header__col header__burger">
+                <div class="header__burger-caption" data-menu-active="Закрыть" data-menu-default="Меню">Меню</div>
+                <div class="header__burger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="header__menu menu">
+                <div class="menu__inner">
+                    <nav class="menu__navigation navigation">
+                        <ul>
+                            <li><a href="#interview">Интервью</a></li>
+                            <li><a href="#signal">Сигнал</a></li>
+                            <li><a href="#way">Путь сигнала</a></li>
+                            <li><a href="#contest">Конкурс</a></li>
+                            <li><a href="#partners">Партнеры</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </nav>
+                    <div class="menu__languages">
+                        <div class="menu__languages-line">----------------</div>
+                        <div class="menu__languages-items">
+                            <a href="./" class="active">RU</a>
+                            <span>|</span>
+                            <a href="index-en.html">EN</a>
+                            <span>|</span>
+                            <a href="index-uz.html">Uz</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
+    <section class="hero section">
+        <div class="container">
+            <div class="hero__inner">
                 <div class="hero__content">
                     <h1 class="hero__title">Радиопослание в глубокий космос</h1>
                     <div class="hero__text">Фестиваль Стихия отправляет радиопослание в глубокий космос с помощью одного из самых мощных в мире планетных радаров. 30 музыкантов и художников отправляют свои произведения к экзопланете K2-18b, которая находится на расстоянии в 124 световых лет от Земли.</div>
@@ -102,8 +104,8 @@
                     <h2 class="section__title">Сигнал</h2>
                 </div>
                 <ul class="signal__items">
-                    <li class="signal__item">
-                        <a href="#" class="signal__item-inner">
+                    <li class="signal__item" data-id="0">
+                        <div class="signal__item-inner">
                             <div class="signal__img">
                                 <picture>
                                     <source srcset="img/signal-1.webp 1x, img/signal-1@2x.webp 2x">
@@ -111,13 +113,13 @@
                                 </picture>
                             </div>
                             <div class="signal__info">
-                                <div class="signal__title">Инструкция<span>>></span></div>
+                                <div class="signal__title">Инструкция<span data-micromodal-trigger="modal-1"><img src="img/download.svg" width="24" alt=""></span></div>
                                 <div class="signal__text">На протяжении более 100 лет человечество посылает в космос радиосигналы. Хотя большая часть сигналов затухает слишком быстро, некоторые сигналы могут передаваться на огромные расстояния. Все, что нам нужно, это мощная передающая система. Кроме того, Вселенная — довольно шумное место. Небесные тела постоянно генерируют сигналы гораздо более мощные, чем те, которые генерируем мы. Как же внеземной разум может «расслышать» нас через этот шум? Более того, когда они получат сигнал, как сделать так, чтобы они не только поняли, что это искусственный сигнал, но и расшифровали его? Это невероятно сложная лингвистическая и инженерная задача. Вместе с учеными из METI мы разрабатываем инструкцию, некий словарь, который по идее должен помочь внеземному разуму не только услышать нас, но и понять.</div>
                             </div>
-                        </a>
+                        </div>
                     </li>
-                    <li class="signal__item">
-                        <a href="#" class="signal__item-inner">
+                    <li class="signal__item" data-id="1">
+                        <div  class="signal__item-inner">
                             <div class="signal__img">
                                 <picture>
                                     <source srcset="img/signal-2.webp 1x, img/signal-2@2x.webp 2x">
@@ -125,13 +127,13 @@
                                 </picture>
                             </div>
                             <div class="signal__info">
-                                <div class="signal__title">Таблица Менделеева<span>>></span></div>
+                                <div class="signal__title">Таблица Менделеева<span data-micromodal-trigger="modal-1"><img src="img/download.svg" width="24" alt=""></span></div>
                                 <div class="signal__text">Сообщения на языке математики и науке служат отправной точкой для связи с возможной внеземной цивилизацией в системе TRAPPIST-1. Мы зашифровали таблицу Менделеева в наше радиопослание в двоичном коде. Таблица передается с использованием метода модуляции, называемого квадратурной фазовой манипуляцией (QPSK), который позволяет ученым передавать красные, белые и черные квадраты в сообщении с различными типами сигналов. Это повысит вероятность дешифровки таблицы возможным внеземным разумом.</div>
                             </div>
-                        </a>
+                        </div>
                     </li>
-                    <li class="signal__item">
-                        <a href="#" class="signal__item-inner">
+                    <li class="signal__item" data-id="2">
+                        <div class="signal__item-inner">
                             <div class="signal__img">
                                 <picture>
                                     <source srcset="img/signal-3.webp 1x, img/signal-3@2x.webp 2x">
@@ -139,13 +141,13 @@
                                 </picture>
                             </div>
                             <div class="signal__info">
-                                <div class="signal__title">Звездный атлас Улугбека<span>>></span></div>
+                                <div class="signal__title">Звездный атлас Улугбека<span data-micromodal-trigger="modal-1"><img src="img/download.svg" width="24" alt=""></span></div>
                                 <div class="signal__text">В 1437 году Улугбек – величайший Самаркандский ученный, астроном, составил звездный атлас при помощи разработанного по собственным чертежам обсерватории. Мы отправляем координаты звезд из каталога шестисотлетней давности, а также современные координаты этих же звезд. Мы хотим, чтобы пытливый ум человека был показан, как инструмент познания природы и созидания блага. Мы хотим показать, что прогресс может и должен быть носителем благой человеческой мечты.</div>
                             </div>
-                        </a>
+                        </div>
                     </li>
                 </ul>
-                <div class="signal__music music">
+                <div class="signal__music music" data-id="0">
                     <div class="music__info">
                         <div class="music__cover">
                             <div class="music__img">
@@ -696,9 +698,9 @@
             </div>
         </div>
     </div>
-    <div class="way__btn way__btn--prev"> << </div>
-    <div class="way__btn way__btn--next"> >> </div>
 </div>
+<div class="way__btn way__btn--prev"> << </div>
+<div class="way__btn way__btn--next"> >> </div>
                     <div class="way__images" id="slider-images">
                         
     <div class="way__img">
@@ -1249,8 +1251,8 @@
                     </div>
                 </div>
                 <div class="modal__download">
-                    <div class="modal__filename">Justfilename.ogg</div>
-                    <a href="#" class="modal__download-btn">
+                    <div class="modal__filename">filename.txt</div>
+                    <a target="_blank" href="#" download="" class="modal__download-btn">
                         <span>скачать файл</span><img src="img/arrow.svg" alt="">
                     </a>
                 </div>

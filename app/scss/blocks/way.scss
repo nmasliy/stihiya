@@ -70,6 +70,7 @@
 
     &__text {
         font-size: 12px;
+        font-weight: 300;
 
         a {
             text-decoration: underline;
@@ -224,6 +225,8 @@
         position: relative;
         z-index: 6;
         touch-action: none;
+        bottom: -70px;
+        padding-bottom: 70px;
     }
     
     &__label {
@@ -232,8 +235,8 @@
 
     &__wifi {
         position: absolute;
-        left: 15px;
-        top: 10px;
+        left: 4px;
+        bottom: 44px;
         z-index: 3;
     }
 

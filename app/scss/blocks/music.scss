@@ -48,12 +48,12 @@
         height: 20px;
         flex-shrink: 0;
         margin-left: auto;
-        margin-right: 30px;
         cursor: pointer;
     }
 
     &__arrow {
         display: none;
+        margin-left: 30px;
 
         img {
             transform: rotate(90deg);
@@ -78,7 +78,6 @@
     }
 
     &__cover {
-        padding-right: 13px;
 
         @media screen and (max-width: 1024px) {
             width: 183px;
@@ -86,7 +85,6 @@
 
         @media screen and (max-width: 575px) {
             width: 100%;
-            padding-right: 0;
         }
     }
 
@@ -101,7 +99,7 @@
         }
 
         @media screen and (max-width: 575px) {
-            margin: 0 -16px 0 0;
+            margin: 16px -16px 0 0;
         }
     }
 
@@ -213,6 +211,7 @@
     &__text {
         font-size: 13px;
         margin-bottom: 16px;
+        font-weight: 300;
         p {
             margin-bottom: 8px;
             &:last-child {

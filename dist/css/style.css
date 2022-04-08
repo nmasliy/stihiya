@@ -269,9 +269,28 @@ button {
 
 .header {
   position: relative;
+  position: fixed;
+  left: 0;
+  top: 64px;
+  right: 0;
+  z-index: 10;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header.fixed {
+  background-color: #000;
+  top: 0;
+  padding: 8px 0;
+}
+
+.header.hidden {
+  opacity: 0;
 }
 
 .header__inner {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,15 +300,13 @@ button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .header__text {
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
-  max-width: 300px;
+  max-width: 370px;
   margin-right: 90px;
 }
 
@@ -364,6 +381,13 @@ button {
   transform: rotate(60deg) translate(-11px, -7px);
 }
 
+.menu-wrapper {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
 .menu {
   display: none;
   -webkit-box-orient: vertical;
@@ -398,6 +422,7 @@ button {
 .menu__languages {
   margin-top: 8px;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .menu__languages-items {
@@ -586,7 +611,8 @@ button {
   font-size: 13px;
   text-align: center;
   letter-spacing: 0.09em;
-  word-break: break-all;
+  word-wrap: break-word;
+  overflow: hidden;
   padding: 0 16px;
 }
 
@@ -724,7 +750,7 @@ button {
 }
 
 .hero {
-  background: url("../img/hero-bg.png") no-repeat center top;
+  background: url("../img/hero-bg.png") no-repeat center top/cover;
 }
 
 @supports (-webkit-appearance: none) {
@@ -742,19 +768,22 @@ button {
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 795px;
+  padding-top: 100px;
 }
 
 .hero__content {
   text-align: center;
   max-width: 678px;
   margin: 0 auto auto;
-  padding-top: 88px;
+  padding-top: 100px;
+  font-weight: 300;
 }
 
 .hero__title {
   font-weight: 500;
   font-size: 72px;
   margin-bottom: 32px;
+  line-height: 1.3;
 }
 
 .hero__text {
@@ -847,8 +876,13 @@ button {
   margin-bottom: 8px;
 }
 
+.signal__title > span {
+  cursor: pointer;
+}
+
 .signal__text {
   font-size: 13px;
+  font-weight: 300;
 }
 
 .music {
@@ -884,12 +918,12 @@ button {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   margin-left: auto;
-  margin-right: 30px;
   cursor: pointer;
 }
 
 .music__arrow {
   display: none;
+  margin-left: 30px;
 }
 
 .music__arrow img {
@@ -897,10 +931,6 @@ button {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
   vertical-align: middle;
-}
-
-.music__cover {
-  padding-right: 13px;
 }
 
 .music__content {
@@ -974,6 +1004,7 @@ button {
 .music__text {
   font-size: 13px;
   margin-bottom: 16px;
+  font-weight: 300;
 }
 
 .music__text p {
@@ -1125,6 +1156,7 @@ button {
 
 .way__text {
   font-size: 12px;
+  font-weight: 300;
 }
 
 .way__text a {
@@ -1246,6 +1278,8 @@ button {
   z-index: 6;
   -ms-touch-action: none;
   touch-action: none;
+  bottom: -70px;
+  padding-bottom: 70px;
 }
 
 .way__label {
@@ -1254,8 +1288,8 @@ button {
 
 .way__wifi {
   position: absolute;
-  left: 15px;
-  top: 10px;
+  left: 4px;
+  bottom: 44px;
   z-index: 3;
 }
 
@@ -1319,12 +1353,15 @@ button {
 .partners__info {
   margin-left: 64px;
   width: calc(100% - 290px - 64px);
+  font-weight: 300;
 }
 
 .partners__title {
   font-weight: 600;
   font-size: 24px;
   margin-bottom: 16px;
+  line-height: 1.3;
+  word-break: break-word;
 }
 
 .partners__text {
@@ -1416,6 +1453,7 @@ button {
   font-size: 13px;
   display: none;
   margin-top: 16px;
+  font-weight: 300;
 }
 
 .form {
@@ -1558,12 +1596,6 @@ button {
     transform: translateX(-6px);
   }
 
-  .signal__item:hover .signal__title > span {
-    -webkit-transform: translateX(-6px);
-    -ms-transform: translateX(-6px);
-    transform: translateX(-6px);
-  }
-
   .signal__title > span {
     -webkit-transition: 0.35s ease;
     -o-transition: 0.35s ease;
@@ -1599,17 +1631,22 @@ button {
     margin-top: 16px;
   }
 
+  .header {
+    top: 24px;
+  }
+
   .header__logo img {
     width: 123px;
   }
 
   .header__text {
-    margin-right: 0;
+    margin: 0 8px;
   }
 
   .hero__inner {
     min-height: 645px;
     background-size: cover;
+    padding-top: 50px;
   }
 
   .hero__content {
@@ -1801,6 +1838,10 @@ button {
 }
 
 @media screen and (max-width: 575px) {
+  body {
+    line-height: 100%;
+  }
+
   .container {
     padding: 0 16px;
   }
@@ -1825,14 +1866,20 @@ button {
   .section__title {
     font-weight: 600;
     font-size: 28px;
+    line-height: 1.3;
   }
 
   .header {
+    top: 16px;
+  }
+
+  .header.fixed {
     padding: 16px 0;
   }
 
   .header__text {
     text-align: left;
+    margin: 0;
     margin-bottom: 32px;
     max-width: 100%;
   }
@@ -1845,6 +1892,10 @@ button {
   .header__col--logo {
     position: relative;
     z-index: 10;
+  }
+
+  .menu-wrapper {
+    display: block;
   }
 
   .menu__inner {
@@ -1900,7 +1951,6 @@ button {
 
   .hero__content {
     text-align: left;
-    padding: 0;
   }
 
   .hero__title {
@@ -1953,11 +2003,10 @@ button {
 
   .music__cover {
     width: 100%;
-    padding-right: 0;
   }
 
   .music__content {
-    margin: 0 -16px 0 0;
+    margin: 16px -16px 0 0;
   }
 
   .music__img {

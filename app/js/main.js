@@ -1,13 +1,14 @@
 import Swiper, { Navigation } from 'swiper';
 import { initAccordions } from './components/accordion.js';
 import { initMenu } from './components/menu.js';
-import { initModals } from './components/modals.js';
 import interact from 'interactjs';
 
 Swiper.use([Navigation]);
 
 window.addEventListener('DOMContentLoaded', function() {
     let tracks = {};
+    let signal = {};
+    let signalStartTime = 123;
     
     function initHeroShowMore() {
         const $heroBtn = document.querySelector('.hero__btn'); 
@@ -130,6 +131,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             el.classList.remove('active');
                         })
 
+                        $item.closest('.music').dataset.id = $item.dataset.id;
                         $item.classList.add('active');
                         $author.textContent = itemData.author[window.lang];
                         $name.textContent = itemData.name[window.lang];
@@ -167,6 +169,7 @@ window.addEventListener('DOMContentLoaded', function() {
         const $sliderMarkerIcon = $sliderMarker.querySelector('.way__label');
         const $sliderPrevBtn = document.querySelector('.way__btn--prev');
         const $sliderNextBtn = document.querySelector('.way__btn--next');
+        const $sliderSignal = $sliderPanel.querySelector('#slider-signal');
         
         const IMAGE_SIZE = $sliderImagesItems[0].offsetWidth;
 
@@ -436,8 +439,26 @@ window.addEventListener('DOMContentLoaded', function() {
             $sliderPanel.style.left = newPos + 'px';
             sliderBarInfo.position = newPos;
         }
+
+        function setSignalDistanceKm() {
+            const $signalValue = document.querySelector('.header__signal-value');
+
+            $signalValue.textContent = Math.round(signalStartTime * 299792.46);
+        }
+
+        function moveSignal() {
+            // Формула для рассчета пройденного сигналом расстояния в км:
+            // [время с момента старта в сек.]*299792,46 км
+
+            // Формула для рассчета положения иконки сигнала на шкале в px:
+            // округленное до целого [время с момента старта в сек.]*0,00000149870606712821 px
+            const signalPosition = Math.round(signalStartTime) * 0.00000149870606712821 + 4;
+            $sliderSignal.style.left = signalPosition + 'px';
+        }
         
         initMarker();
+        moveSignal();
+        setSignalDistanceKm();
     }
 
     function initFormValidation() {
@@ -483,7 +504,81 @@ window.addEventListener('DOMContentLoaded', function() {
             })
     }
 
+    function getSignalData() {
+        const requestPath = 'files/data/signal.json';
 
+        return fetch(requestPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("HTTP error " + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                signal = {...data};
+            })
+            .catch(function (e) {
+                console.error('Error: ' + e);
+            })
+    }
+
+    function initModals() {
+        const $modals = document.querySelectorAll('.modal');
+        const $modalsTriggers = document.querySelectorAll('[data-micromodal-trigger]');
+        let modalDataType;
+        let dataBox;
+    
+        $modalsTriggers.forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (item.closest('.signal__item')) {
+                    modalDataType ='signal';
+                    dataBox = item.closest('.signal__item');
+                } else if (item.closest('.music')) {
+                    modalDataType = 'music';
+                    dataBox = item.closest('.music');
+                }
+                e.preventDefault();
+            });
+        })
+    
+        if ($modals.length > 0) {
+            MicroModal.init({
+                onShow: (modal) => {
+    
+                    if (modal.id === "modal-1") {
+                        const $modalText = modal.querySelector('.modal__text');
+                        const $modalDownloadLink = modal.querySelector('.modal__download-btn');
+                        const $modalName = modal.querySelector('.modal__filename');
+                        let data;
+
+                        if (modalDataType === 'signal') {
+                            data = signal;
+                        } else if (modalDataType === 'music') {
+                            data = tracks;
+                        }
+
+                        const itemData = data[dataBox.dataset.id];
+                        
+                        $modalText.textContent = itemData.code;
+                        $modalName.textContent = itemData.filename + '.txt';
+                        $modalDownloadLink.href = itemData.link;
+                        $modalDownloadLink.download = itemData.filename;
+                    }
+                },
+                onClose: (modal) => {
+                    // Custom events
+                },
+                disableFocus: true,
+                openClass: 'is-open', 
+                awaitOpenAnimation: true, 
+                awaitCloseAnimation: true, 
+                disableScroll: true
+            });
+        }
+    }
+
+    getTracksData();
+    getSignalData();
     initAccordions();
     initMenu();
     initModals();
@@ -493,5 +588,4 @@ window.addEventListener('DOMContentLoaded', function() {
     initExpandCover();
     initWaySlider();
     initFormValidation();
-    getTracksData();
 })

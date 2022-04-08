@@ -3,9 +3,33 @@ $menuTransition: .35s ease-in-out;
 
 .header {
     position: relative;
-
+    position: fixed;
+    left: 0;
+    top: 64px;
+    right: 0;
+    z-index: 10;
+    transition: .3s;
+    
+    @media screen and (max-width: 1024px) {
+        top: 24px;
+    }
+    
     @media screen and (max-width: 575px) {
-        padding: 16px 0;
+        top: 16px;
+    }
+    
+    &.fixed {
+        background-color: $black;
+        top: 0;
+        padding: 8px 0;
+
+        @media screen and (max-width: 575px) {
+            padding: 16px 0;
+        }
+    }
+
+    &.hidden {
+        opacity: 0;
     }
 
     &__logo {
@@ -22,21 +46,21 @@ $menuTransition: .35s ease-in-out;
     }
 
     &__inner {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
     }
 
     &__text {
         text-align: center;
         text-transform: uppercase;
         font-weight: 500;
-        max-width: 300px;
+        max-width: 370px;
         margin-right: 90px;
 
         @media screen and (max-width: 1024px) {
-            margin-right: 0;
+            margin: 0 8px;
         }
 
         @media screen and (max-width: 700px) {
@@ -45,6 +69,7 @@ $menuTransition: .35s ease-in-out;
 
         @media screen and (max-width: 575px) {
             text-align: left;
+            margin: 0;
             margin-bottom: 32px;
             max-width: 100%;
         }
@@ -117,6 +142,16 @@ $menuTransition: .35s ease-in-out;
     }
 }
 
+.menu-wrapper {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    @media screen and (max-width: 575px) {
+        display: block;
+    }
+}
+
 .menu {
     display: none;
     flex-direction: column;
@@ -159,6 +194,7 @@ $menuTransition: .35s ease-in-out;
     &__languages {
         margin-top: 8px;
         letter-spacing: 0.1em;
+        text-transform: uppercase;
     }
     
     &__languages-items {

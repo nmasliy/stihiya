@@ -1,5 +1,5 @@
 .hero {
-    background: url('../img/hero-bg.png') no-repeat center top;
+    background: url('../img/hero-bg.png') no-repeat center top / cover;
 
     @supports (-webkit-appearance:none) {
         background-image: url('../img/hero-bg.webp');
@@ -14,10 +14,12 @@
         display: flex;
         flex-direction: column;
         min-height: 795px;
+        padding-top: 100px;
         
         @media screen and (max-width: 1024px) {
             min-height: 645px;
             background-size: cover;
+            padding-top: 50px;
         }
         
         @media screen and (max-width: 575px) {
@@ -29,7 +31,8 @@
         text-align: center;
         max-width: 678px;
         margin: 0 auto auto;
-        padding-top: 88px;
+        padding-top: 100px;
+        font-weight: 300;
 
         @media screen and (max-width: 1024px) {
             margin: auto;
@@ -39,7 +42,6 @@
         
         @media screen and (max-width: 575px) {
             text-align: left;
-            padding: 0;
         }
     }
 
@@ -47,6 +49,7 @@
         font-weight: 500;
         font-size: 72px;
         margin-bottom: 32px;
+        line-height: 1.3;
 
         @media screen and (max-width: 1024px) {
             font-size: 62px;
