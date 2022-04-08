@@ -447,12 +447,8 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         function moveSignal() {
-            // Формула для рассчета пройденного сигналом расстояния в км:
-            // [время с момента старта в сек.]*299792,46 км
-
-            // Формула для рассчета положения иконки сигнала на шкале в px:
-            // округленное до целого [время с момента старта в сек.]*0,00000149870606712821 px
-            const signalPosition = Math.round(signalStartTime) * 0.00000149870606712821 + 4;
+            const leftOffset = 4;
+            const signalPosition = Math.round(signalStartTime) * 0.00000149870606712821 + leftOffset;
             $sliderSignal.style.left = signalPosition + 'px';
         }
         
