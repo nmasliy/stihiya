@@ -408,7 +408,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 sliderBarInfo.activeSegment.siblingPoint.position = siblingPointPosition;
             }
 
-            $sliderBar.addEventListener('click', function(event) {
+            $sliderPanel.addEventListener('click', function(event) {
 
                 if (event.target.closest('circle')) return false;
 
