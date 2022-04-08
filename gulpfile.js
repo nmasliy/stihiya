@@ -30,6 +30,8 @@ function reloadPage() {
 }
 
 function files() {
+    src('app/favicon/**/*')
+        .pipe(dest('dist/favicon'));
     return src('app/files/**/*')
         .pipe(dest('dist/files'))
         .pipe(browserSync.stream())
