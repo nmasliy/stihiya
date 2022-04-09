@@ -8,7 +8,8 @@ Swiper.use([Navigation]);
 window.addEventListener('DOMContentLoaded', function() {
     let tracks = {};
     let signal = {};
-    let startDate = '2022-01-01'; 
+    // let startDate = '2022-01-01'; 
+    let startDate = '2022-04-09'; 
     
     function initHeroShowMore() {
         const $heroBtn = document.querySelector('.hero__btn'); 
@@ -287,11 +288,6 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         function onSliderButtonClick(newIndex) {
-            console.log(newIndex)
-            if (newIndex == 22) {
-                console.log(sliderBarInfo)
-                // sliderBarInfo.marker.position = 5540
-            }
             sliderBarInfo.marker.position = +$breakpoints[newIndex].getAttribute('cx') - 5;
             sliderBarInfo.marker.positionPercentage = (sliderBarInfo.marker.position  / sliderBarInfo.width) * 100;
             swiper.slideTo(newIndex);
@@ -335,6 +331,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 let markerPosition = event.offsetX || event.client.x;
                 let nearestPointPosition;
                 let markerPositionPercentage = (markerPosition / $sliderPanel.offsetWidth) * 100;
+                if (markerPositionPercentage >= 99.85) markerPositionPercentage = 99.85;
                 let positionPercentageOnVisible = (markerPosition / sliderBarInfo.visibleWidth) * 100;
 
                 $sliderMarker.style.paddingLeft = markerPositionPercentage + '%';
@@ -452,7 +449,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         function moveSignal() {
             const leftOffset = 4;
-            const signalPosition = Math.round(parseInt((new Date().getTime()/1000) - (new Date(startDate).getTime()/1000)) * 0.00000149870606712821) + leftOffset;
+            const signalPosition = Math.round(Math.pow(parseInt((new Date().getTime()/1000) - (new Date(startDate).getTime()/1000)) * 299792.46, 0.25)) + leftOffset;
             $sliderSignal.style.left = signalPosition + 'px';
         }
         
