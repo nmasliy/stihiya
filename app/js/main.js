@@ -229,9 +229,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
         if (window.innerWidth <= 575) {
             sliderBarInfo.startPosition = 150;
-            sliderBarInfo.endPosition = 5400;
+            sliderBarInfo.endPosition = 5540;
         } else if (window.innerWidth <= 768) {
-            sliderBarInfo.endPosition = 5400;
+            sliderBarInfo.endPosition = 5540;
             sliderBarInfo.startPosition = 300;
         }
 
@@ -248,7 +248,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 $sliderImages.style.left = -imgOffset + 'px';
                 $sliderMarker.style.paddingLeft = sliderBarInfo.marker.positionPercentage + '%';
 
-                calculateSidebarOffset();
+                calculateSlidebarOffset();
             })
         })
 
@@ -287,15 +287,19 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         function onSliderButtonClick(newIndex) {
+            console.log(newIndex)
+            if (newIndex == 22) {
+                console.log(sliderBarInfo)
+                // sliderBarInfo.marker.position = 5540
+            }
             sliderBarInfo.marker.position = +$breakpoints[newIndex].getAttribute('cx') - 5;
             sliderBarInfo.marker.positionPercentage = (sliderBarInfo.marker.position  / sliderBarInfo.width) * 100;
-
             swiper.slideTo(newIndex);
 
             const imgOffset = IMAGE_SIZE * newIndex;
             $sliderImages.style.left = -imgOffset + 'px';
             $sliderMarker.style.paddingLeft = sliderBarInfo.marker.positionPercentage + '%';
-            calculateSidebarOffset();
+            calculateSlidebarOffset();
         }
     
         function getElementOffsetLeft(element, parent =  $sliderBar) {
@@ -320,7 +324,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     swiper.slideTo(sliderBarInfo.activeSegment.nearestPoint.index);
                 })
                 .on('dragend', function (event) { 
-                    calculateSidebarOffset();
+                    calculateSlidebarOffset();
 
                     $sliderImages.style.transition = '';
                 })
@@ -413,13 +417,13 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (event.target.closest('circle')) return false;
 
                 calculateDistance(event);
-                calculateSidebarOffset();
+                calculateSlidebarOffset();
                 
                 swiper.slideTo(sliderBarInfo.activeSegment.nearestPoint.index);
             })
         }
 
-        function calculateSidebarOffset() {
+        function calculateSlidebarOffset() {
             const center = sliderBarInfo.visibleWidth / 2;
 
             let pos = getElementOffsetLeft($sliderMarkerIcon, $sliderBody);
