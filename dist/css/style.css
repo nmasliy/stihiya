@@ -1271,6 +1271,7 @@ button {
   left: 130px;
   bottom: 0;
   z-index: 3;
+  width: 5857px;
 }
 
 .way__label-wrapper {
@@ -1281,6 +1282,7 @@ button {
   touch-action: none;
   bottom: -70px;
   padding-bottom: 70px;
+  width: 5857px;
 }
 
 .way__label {

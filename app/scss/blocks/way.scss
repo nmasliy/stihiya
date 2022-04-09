@@ -219,6 +219,7 @@
         left: 130px;
         bottom: 0;
         z-index: 3;
+        width: 5857px;
 
         @media screen and (max-width: 1024px) {
             bottom: 15px;
@@ -240,6 +241,7 @@
         touch-action: none;
         bottom: -70px;
         padding-bottom: 70px;
+        width: 5857px;
     }
     
     &__label {
