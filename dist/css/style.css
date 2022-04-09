@@ -1294,6 +1294,10 @@ button {
   z-index: 3;
 }
 
+.way__panel-body {
+  width: 5857px;
+}
+
 .way__panel-body circle {
   cursor: pointer;
 }
