@@ -82,7 +82,7 @@ function scriptsLibs() {
 function scripts() {
     return src('app/js/main.js')
         .pipe(webpack({
-			mode: isMinify ? 'production' : 'development',
+			mode: 'development',
 			output: {
 				filename: 'main.js'
 			}
